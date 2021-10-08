@@ -1,0 +1,46 @@
+using world size: 1 and model-parallel size: 1 
+ > using dynamic loss scaling
+> padded vocab (size: 30524) with 68 dummy tokens (new size: 30592)
+> found end-of-document token: 0
+Returning 500 test examples with label dist.: [(None, 500)]
+/dataset/lichunyou/oneflow_src/oneflow/python/oneflow/utils/data/dataloader.py:219: UserWarning: Not support multiprocessing dataloader yet, we will temporary set num_workers=0!
+  "Not support multiprocessing dataloader yet, we will temporary set num_workers=0!"
+flow.env.get_world_size() >>>>>  1 flow.env.get_rank() >>>>> 0
+Traceback (most recent call last):
+  File "finetune_glm.py", line 484, in <module>
+    main(args)
+  File "/dataset/lichunyou/GLM/GLM_copa_oneflow/tasks/superglue/finetune.py", line 115, in main
+    end_of_epoch_callback_provider=metrics_func_provider  #metrics_func_provider
+  File "/dataset/lichunyou/GLM/GLM_copa_oneflow/finetune_glm.py", line 396, in finetune
+    load_pretrained(model, args.load_pretrained, args, task_tokens=task_tokens)
+  File "/dataset/lichunyou/GLM/GLM_copa_oneflow/train_utils.py", line 54, in load_pretrained
+    sd = torch.load(checkpoint_name, map_location='cpu')
+  File "/dataset/lichunyou/conda_env/miniconda3/envs/p7/lib/python3.7/site-packages/torch/serialization.py", line 581, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/dataset/lichunyou/conda_env/miniconda3/envs/p7/lib/python3.7/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/dataset/lichunyou/conda_env/miniconda3/envs/p7/lib/python3.7/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/data/lichunyou/GLM/GLM_copa/copa_model/blank-base-copa_08-25-23-55/best/mp_rank_00_model_states.pt'
+F0929 14:04:43.854015 650780 cuda_allocator.cpp:171] Check failed: cudaMemGetInfo(&free_bytes, &total_bytes) : driver shutting down (4) 
+*** Check failure stack trace: ***
+    @     0x7fef1e185bc3  google::LogMessage::Fail()
+    @     0x7fef1e187c44  google::LogMessage::SendToLog()
+    @     0x7fef1e1856bf  google::LogMessage::Flush()
+    @     0x7fef1e1881ef  google::LogMessageFatal::~LogMessageFatal()
+    @     0x7fef1a8d4105  oneflow::vm::CudaAllocator::AllocateBlockToExtendTotalMem()
+    @     0x7fef1a8d495b  oneflow::vm::CudaAllocator::Allocate()
+    @     0x7fef1a901fde  oneflow::vm::ThreadSafeAllocator::Allocate()
+    @     0x7fef197e3bd2  oneflow::vm::EagerBlobObject::TryAllocateBlobBodyMemory()
+    @     0x7fef1982f96d  oneflow::vm::LocalCallOpKernelUtil::AllocateOutputBlobsMemory()
+    @     0x7fef19830763  oneflow::vm::LocalCallOpKernelUtil::Compute()
+    @     0x7fef1980818f  oneflow::vm::LocalCallOpKernelInstructionType::Compute()
+    @     0x7fef1a8d6688  oneflow::vm::CudaCopyH2DStreamType::Compute()
+    @     0x7fef1a8fafa6  oneflow::vm::StreamType::Run()
+    @     0x7fef1a90b452  oneflow::vm::VirtualMachine::DispatchAndPrescheduleInstructions()
+    @     0x7fef1a90c0d3  oneflow::vm::VirtualMachine::Schedule()
+    @     0x7fef1a8ed25c  oneflow::OneflowVM::Loop()
+    @     0x7fefe8205de4  (unknown)
+    @     0x7feff429a609  start_thread
+    @     0x7feff41c1293  clone
+    @              (nil)  (unknown)

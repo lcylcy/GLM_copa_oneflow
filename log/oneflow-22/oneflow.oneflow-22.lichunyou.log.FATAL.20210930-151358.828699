@@ -1,0 +1,34 @@
+Log file created at: 2021/09/30 15:13:58
+Running on machine: oneflow-22
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0930 15:13:58.615839 828906 opkernel_instruction_type.cpp:602] LocalCallOpKernelUtil::Infer(instruction) is not OK:
+
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/core/eager/opkernel_instruction_type.cpp", line 448, in Infer
+    operand->mut_opkernel()->ChooseOpKernel( operand->inputs(), operand->outputs(), operand->consistent_tensor_infer_result())
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/kernels/stateful_local_opkernel.cpp", line 463, in ChooseOpKernel
+    user_op::UserOpRegistryMgr::Get().GetOpKernelRegistryResult(op_type_name, *reg_ctx_)
+Cannot find the kernel matching Current OperatorConf. 
+ The Info of OperatorConf are 
+ op_name: tensor_scatter_nd_update137
+ op_type_name: tensor_scatter_nd_update
+ DeviceType_Name: kGPU
+ DataType_Name of params_0: kInt64
+ DataType_Name of indices_0: kInt64
+ DataType_Name of updates_0: kInt64
+ DataType_Name of out_0: kInt64
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt32)) and (data_type of tensor \'out\' == kFloat))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt32)) and (data_type of tensor \'out\' == kDouble))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt32)) and (data_type of tensor \'out\' == kInt8))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt32)) and (data_type of tensor \'out\' == kInt32))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt32)) and (data_type of tensor \'out\' == kInt64))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt64)) and (data_type of tensor \'out\' == kFloat))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt64)) and (data_type of tensor \'out\' == kDouble))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt64)) and (data_type of tensor \'out\' == kInt8))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt64)) and (data_type of tensor \'out\' == kInt32))"
+op_kernels_not_found_debug_str: "(((device_tag == cpu [False]) and (data_type of tensor \'indices\' == kInt64)) and (data_type of tensor \'out\' == kInt64))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt32 [False])) and (data_type of tensor \'out\' == kFloat))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt32 [False])) and (data_type of tensor \'out\' == kDouble))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt32 [False])) and (data_type of tensor \'out\' == kInt32))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt64 [True])) and (data_type of tensor \'out\' == kFloat [False]))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt64 [True])) and (data_type of tensor \'out\' == kDouble [False]))"
+op_kernels_not_found_debug_str: "(((device_tag == gpu [True]) and (data_type of tensor \'indices\' == kInt64 [True])) and (data_type of tensor \'out\' == kInt32 [False]))"

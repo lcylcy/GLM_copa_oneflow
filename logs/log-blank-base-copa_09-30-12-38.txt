@@ -1,0 +1,4 @@
+using world size: 1 and model-parallel size: 1 
+ > using dynamic loss scaling
+> padded vocab (size: 30524) with 68 dummy tokens (new size: 30592)
+> found end-of-document token: 0

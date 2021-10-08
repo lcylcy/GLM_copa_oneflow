@@ -1,0 +1,4 @@
+Log file created at: 2021/09/30 14:58:30
+Running on machine: oneflow-22
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0930 14:58:30.671598 802068 cuda_allocator.cpp:171] Check failed: cudaMemGetInfo(&free_bytes, &total_bytes) : driver shutting down (4) 

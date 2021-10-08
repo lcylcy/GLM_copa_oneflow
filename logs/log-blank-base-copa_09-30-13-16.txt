@@ -1,0 +1,7190 @@
+using world size: 1 and model-parallel size: 1 
+ > using dynamic loss scaling
+> padded vocab (size: 30524) with 68 dummy tokens (new size: 30592)
+> found end-of-document token: 0
+Returning 500 test examples with label dist.: [(None, 500)]
+flow.env.get_world_size() >>>>>  1 flow.env.get_rank() >>>>> 0
+arguments:
+  transformer_xl ............... False
+  pretrained_bert .............. False
+  encoder_decoder .............. False
+  attention_dropout ............ 0.1
+  num_attention_heads .......... 12
+  hidden_size .................. 768
+  intermediate_size ............ None
+  num_layers ................... 12
+  layernorm_epsilon ............ 1e-05
+  hidden_dropout ............... 0.1
+  output_dropout ............... 0.1
+  max_position_embeddings ...... 512
+  vocab_size ................... 30592
+  deep_init .................... False
+  make_vocab_size_divisible_by . 128
+  cpu_optimizer ................ False
+  cpu_torch_adam ............... False
+  fp16 ......................... True
+  fp32_embedding ............... False
+  fp32_layernorm ............... False
+  fp32_tokentypes .............. False
+  fp32_allreduce ............... False
+  hysteresis ................... 2
+  loss_scale ................... None
+  loss_scale_window ............ 1000
+  min_scale .................... 1
+  attention_scale .............. 1.0
+  experiment_name .............. blank-base-copa_09-30-13-16
+  batch_size ................... 4
+  gradient_accumulation_steps .. 2
+  weight_decay ................. 0.01
+  checkpoint_activations ....... True
+  checkpoint_num_layers ........ 1
+  deepspeed_activation_checkpointing  False
+  epochs ....................... -1
+  clip_grad .................... 1.0
+  train_iters .................. 0
+  label_smoothing .............. 0.0
+  log_interval ................. 20
+  summary_dir .................. 
+  seed ......................... 1234
+  reset_position_ids ........... False
+  reset_attention_mask ......... False
+  lr_decay_iters ............... None
+  lr_decay_style ............... linear
+  lr_decay_ratio ............... 0.1
+  lr ........................... 5e-06
+  warmup ....................... 0.1
+  switch_linear ................ False
+  save ......................... /dataset/lichunyou/GLM/GLM_copa_oneflow/copa_model/blank-base-copa_09-30-13-16
+  new_save_directory ........... False
+  save_epoch ................... 100000
+  save_interval ................ 10000
+  no_save_optim ................ False
+  no_save_rng .................. False
+  load ......................... None
+  no_load_optim ................ True
+  no_load_rng .................. False
+  no_load_lr_scheduler ......... True
+  no_deepspeed_load ............ False
+  finetune ..................... True
+  resume_dataloader ............ False
+  distributed_backend .......... nccl
+  DDP_impl ..................... torch
+  local_rank ................... None
+  block_lm ..................... True
+  masked_lm .................... False
+  bert_prob .................... 0.5
+  gpt_infill_prob .............. 0.5
+  gpt_min_ratio ................ 0.5
+  gap_sentence_prob ............ 0.0
+  gap_sentence_ratio ........... 0.15
+  avg_block_length ............. 3
+  short_seq_prob ............... 0.0
+  single_span_prob ............. 0.0
+  task_mask .................... False
+  no_shuffle_block ............. False
+  no_block_position ............ False
+  sentinel_token ............... False
+  block_mask_prob .............. 0.0
+  context_mask_ratio ........... 0.0
+  random_position .............. False
+  eval_batch_size .............. 4
+  eval_iters ................... 100
+  eval_interval ................ 1000
+  eval_epoch ................... 1
+  eval_seq_length .............. None
+  eval_max_preds_per_seq ....... None
+  overlapping_eval ............. 32
+  temperature .................. 1.0
+  top_p ........................ 0.0
+  top_k ........................ 0
+  out_seq_length ............... 256
+  num_beams .................... 1
+  length_penalty ............... 0.0
+  no_repeat_ngram_size ......... 0
+  min_tgt_length ............... 0
+  select_topk .................. False
+  blank_maskratio .............. 0.1
+  model_parallel_size .......... 1
+  shuffle ...................... False
+  filter_english ............... False
+  train_data ................... None
+  valid_data ................... None
+  test_data .................... None
+  data_dir ..................... /dataset/lichunyou/GLM/GLM_copa_oneflow/dataset/COPA
+  input_data_sizes_file ........ sizes.txt
+  delim ........................ ,
+  text_key ..................... sentence
+  eval_text_key ................ None
+  split ........................ 1000,1,1
+  no_lazy_loader ............... False
+  half_lazy_loader ............. False
+  loader_scatter ............... None
+  loose_json ................... False
+  presplit_sentences ........... False
+  num_workers .................. 1
+  tokenizer_model_type ......... bert-base-uncased
+  tokenizer_path ............... tokenizer.model
+  tokenizer_type ............... BertWordPieceTokenizer
+  no_pre_tokenize .............. False
+  cache_dir .................... None
+  use_tfrecords ................ False
+  seq_length ................... 256
+  mem_length ................... 0
+  max_preds_per_seq ............ None
+  non_sentence_start ........... 0.0
+  sample_one_document .......... False
+  load_splits .................. None
+  save_splits .................. None
+  save_test_data ............... None
+  multi_task_data .............. None
+  multi_task_ratio ............. 0.0
+  multi_seq_length ............. None
+  multi_batch_size ............. None
+  task ......................... COPA
+  load_pretrained .............. /dataset/lichunyou/GLM/GLM_copa_oneflow/copa_model/blank-base-copa_08-25-23-55
+  pool_token ................... cls
+  cloze_eval ................... True
+  multi_token .................. False
+  segment_length ............... 0
+  loss_func .................... cross_entropy
+  block_lm_ratio ............... 0.0
+  adapet ....................... False
+  pattern_id ................... 0
+  fast_decode .................. False
+  few_superglue ................ False
+  eval_valid ................... False
+  validation_metric ............ None
+  unidirectional ............... False
+  src_seq_length ............... None
+  tgt_seq_length ............... None
+  adam_beta1 ................... 0.9
+  adam_beta2 ................... 0.999
+  adam_eps ..................... 1e-08
+  optimizer .................... adam
+  wsc_negative ................. False
+  overwrite .................... True
+  no_validation ................ False
+  continuous_prompt ............ False
+  num_prompt_tokens ............ 0
+  prompt_func .................. lstm
+  freeze_transformer ........... False
+  tune_prefix_layers ........... None
+  prefix_prompt ................ 0
+  prompt_init .................. False
+  deepspeed .................... True
+  deepspeed_config ............. config_tasks/config_blocklm_10B.json
+  deepscale .................... False
+  deepscale_config ............. None
+  deepspeed_mpi ................ False
+  cuda ......................... True
+  rank ......................... 0
+  world_size ................... 1
+  dynamic_loss_scale ........... True
+  eod_token .................... 0
+  variable_num_choices ......... False
+  iteration .................... 0
+  log_dir ...................... runs/blank-base-copa_09-30-13-16
+done with setups ...
+time (ms) | train/valid/test dataset/dataloder: 0.44 | callback function: 7.09 | model and optimizer: 2876.99 | pretrained checkpoint: 2323.72
+training ...
+{'test-0': {
+  "guid": "test-0",
+  "idx": 0,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was fragile.",
+    "choice2": "It was small.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The item was packaged in bubble wrap.",
+  "text_b": null
+}
+, 'test-1': {
+  "guid": "test-1",
+  "idx": 1,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I retrieved a ticket stub.",
+    "choice2": "I found a weapon.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I emptied my pockets.",
+  "text_b": null
+}
+, 'test-2': {
+  "guid": "test-2",
+  "idx": 2,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The termites disappeared from the house.",
+    "choice2": "The termites ate through the wood in the house.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "Termites invaded the house.",
+  "text_b": null
+}
+, 'test-3': {
+  "guid": "test-3",
+  "idx": 3,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The patrol agent checked their passports.",
+    "choice2": "The patrol agent accused them of smuggling.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The travelers reached the border.",
+  "text_b": null
+}
+, 'test-4': {
+  "guid": "test-4",
+  "idx": 4,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was a holiday.",
+    "choice2": "It was summer.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The office was closed.",
+  "text_b": null
+}
+, 'test-5': {
+  "guid": "test-5",
+  "idx": 5,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She played checkers.",
+    "choice2": "She jumped rope.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl ran out of energy.",
+  "text_b": null
+}
+, 'test-6': {
+  "guid": "test-6",
+  "idx": 6,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "More people entered the line.",
+    "choice2": "She stepped out of the line.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman lost her place in line.",
+  "text_b": null
+}
+, 'test-7': {
+  "guid": "test-7",
+  "idx": 7,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The baby drooled on her bib.",
+    "choice2": "The baby soiled her diaper.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl pinched her nose.",
+  "text_b": null
+}
+, 'test-8': {
+  "guid": "test-8",
+  "idx": 8,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The audience clapped along to the music.",
+    "choice2": "The audience politely listened in silence.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The band played their hit song.",
+  "text_b": null
+}
+, 'test-9': {
+  "guid": "test-9",
+  "idx": 9,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The girl stayed after school for detention.",
+    "choice2": "The girl brought the teacher an apple.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl wanted to thank her math teacher.",
+  "text_b": null
+}
+, 'test-10': {
+  "guid": "test-10",
+  "idx": 10,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Their camp counselor told them a ghost story.",
+    "choice2": "They toasted marshmallows on the campfire.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The young campers felt scared.",
+  "text_b": null
+}
+, 'test-11': {
+  "guid": "test-11",
+  "idx": 11,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He got lost in thought.",
+    "choice2": "He got a concussion.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man hit his head.",
+  "text_b": null
+}
+, 'test-12': {
+  "guid": "test-12",
+  "idx": 12,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My bank account was empty.",
+    "choice2": "I earned a pay raise.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The check I wrote bounced.",
+  "text_b": null
+}
+, 'test-13': {
+  "guid": "test-13",
+  "idx": 13,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He deleted the spam.",
+    "choice2": "He sent out a mass email.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man's email inbox was full of spam.",
+  "text_b": null
+}
+, 'test-14': {
+  "guid": "test-14",
+  "idx": 14,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was exposed to the disease.",
+    "choice2": "He recovered from the disease.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The sailor was quarantined.",
+  "text_b": null
+}
+, 'test-15': {
+  "guid": "test-15",
+  "idx": 15,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She recited it to herself.",
+    "choice2": "She forgot to write it down.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl memorized the code.",
+  "text_b": null
+}
+, 'test-16': {
+  "guid": "test-16",
+  "idx": 16,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The water quenched my thirst.",
+    "choice2": "The glass became full.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I poured the water into the glass.",
+  "text_b": null
+}
+, 'test-17': {
+  "guid": "test-17",
+  "idx": 17,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He wanted to offer his friend support.",
+    "choice2": "He was thinking about his friend's words.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man remained silent when his friend finishing speaking.",
+  "text_b": null
+}
+, 'test-18': {
+  "guid": "test-18",
+  "idx": 18,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I felt guilty.",
+    "choice2": "I pressed charges.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The accident was my fault.",
+  "text_b": null
+}
+, 'test-19': {
+  "guid": "test-19",
+  "idx": 19,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The chain was wrapped around a tire.",
+    "choice2": "There was a broken link in the chain.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The chain came apart.",
+  "text_b": null
+}
+, 'test-20': {
+  "guid": "test-20",
+  "idx": 20,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They grew tired of arguing.",
+    "choice2": "They avoided discussing the problem.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The couple decided to compromise.",
+  "text_b": null
+}
+, 'test-21': {
+  "guid": "test-21",
+  "idx": 21,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She hired a campaign manager.",
+    "choice2": "She testified in court.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman decided to run for public office.",
+  "text_b": null
+}
+, 'test-22': {
+  "guid": "test-22",
+  "idx": 22,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He packed warm clothing in his suitcase.",
+    "choice2": "He travelled with a big suitcase.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man anticipated cold weather on his trip.",
+  "text_b": null
+}
+, 'test-23': {
+  "guid": "test-23",
+  "idx": 23,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He raised his hand.",
+    "choice2": "He goofed off.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The student knew the answer to the question.",
+  "text_b": null
+}
+, 'test-24': {
+  "guid": "test-24",
+  "idx": 24,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Dust got into his eyes.",
+    "choice2": "He put goggles over his eyes.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's eyes watered.",
+  "text_b": null
+}
+, 'test-25': {
+  "guid": "test-25",
+  "idx": 25,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her opponent accused her of cheating.",
+    "choice2": "Her opponent felt sorry for her.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The player won five games in a row.",
+  "text_b": null
+}
+, 'test-26': {
+  "guid": "test-26",
+  "idx": 26,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He caught the student cheating.",
+    "choice2": "The student's answers were incorrect.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teacher tore up the student's exam.",
+  "text_b": null
+}
+, 'test-27': {
+  "guid": "test-27",
+  "idx": 27,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I lost my voice.",
+    "choice2": "I ran out of breath.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I paused to stop talking.",
+  "text_b": null
+}
+, 'test-28': {
+  "guid": "test-28",
+  "idx": 28,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I put it in the microwave.",
+    "choice2": "I covered it with plastic wrap.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The frozen food thawed.",
+  "text_b": null
+}
+, 'test-29': {
+  "guid": "test-29",
+  "idx": 29,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He had stomach cramps.",
+    "choice2": "He wanted a day off.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The employee faked sick.",
+  "text_b": null
+}
+, 'test-30': {
+  "guid": "test-30",
+  "idx": 30,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She ran on the pool deck.",
+    "choice2": "She jumped off the diving board.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl landed in the pool.",
+  "text_b": null
+}
+, 'test-31': {
+  "guid": "test-31",
+  "idx": 31,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was opening day for the movie.",
+    "choice2": "The movie received poor reviews.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The movie tickets sold out.",
+  "text_b": null
+}
+, 'test-32': {
+  "guid": "test-32",
+  "idx": 32,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "People isolated him.",
+    "choice2": "People complimented him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost weight.",
+  "text_b": null
+}
+, 'test-33': {
+  "guid": "test-33",
+  "idx": 33,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She typed up a letter.",
+    "choice2": "She climbed up a rope.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl's hands became blistered.",
+  "text_b": null
+}
+, 'test-34': {
+  "guid": "test-34",
+  "idx": 34,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The audience cheered in astonishment.",
+    "choice2": "The acrobat swung from a trapeze.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The circus performer juggled while riding a unicycle.",
+  "text_b": null
+}
+, 'test-35': {
+  "guid": "test-35",
+  "idx": 35,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My friend kept me waiting.",
+    "choice2": "My friend arrived on time.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I lost my patience.",
+  "text_b": null
+}
+, 'test-36': {
+  "guid": "test-36",
+  "idx": 36,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They developed nuclear weapons.",
+    "choice2": "They negotiated a treaty.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The warring countries wanted peace.",
+  "text_b": null
+}
+, 'test-37': {
+  "guid": "test-37",
+  "idx": 37,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He became drowsy.",
+    "choice2": "He ran a fever.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man took sleeping medication.",
+  "text_b": null
+}
+, 'test-38': {
+  "guid": "test-38",
+  "idx": 38,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The leg of the sofa came loose.",
+    "choice2": "She bruised her knee.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman bumped into the sofa.",
+  "text_b": null
+}
+, 'test-39': {
+  "guid": "test-39",
+  "idx": 39,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The balloon popped.",
+    "choice2": "The balloon flew away.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy squeezed the balloon.",
+  "text_b": null
+}
+, 'test-40': {
+  "guid": "test-40",
+  "idx": 40,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They unpacked their suitcases.",
+    "choice2": "They went to the airport.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "They travelers checked into their hotel room.",
+  "text_b": null
+}
+, 'test-41': {
+  "guid": "test-41",
+  "idx": 41,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The peach bruised.",
+    "choice2": "Juice spilled out.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I bit into the peach.",
+  "text_b": null
+}
+, 'test-42': {
+  "guid": "test-42",
+  "idx": 42,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I ate a doughnut.",
+    "choice2": "I had a sweet tooth.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "My hands became sticky.",
+  "text_b": null
+}
+, 'test-43': {
+  "guid": "test-43",
+  "idx": 43,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The door opened.",
+    "choice2": "The door locked.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I pushed the door.",
+  "text_b": null
+}
+, 'test-44': {
+  "guid": "test-44",
+  "idx": 44,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The products were tested for quality assurance.",
+    "choice2": "The products were manufactured through child labor.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Activists boycotted the products.",
+  "text_b": null
+}
+, 'test-45': {
+  "guid": "test-45",
+  "idx": 45,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A mouse crawled out of the hole.",
+    "choice2": "Dust blew out of the hole.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I drilled a hole in the wall.",
+  "text_b": null
+}
+, 'test-46': {
+  "guid": "test-46",
+  "idx": 46,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her sister was happy.",
+    "choice2": "Her sister got divorced.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman felt envious of her sister.",
+  "text_b": null
+}
+, 'test-47': {
+  "guid": "test-47",
+  "idx": 47,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I put on an apron.",
+    "choice2": "I changed my shirt.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I spilled wine on my shirt.",
+  "text_b": null
+}
+, 'test-48': {
+  "guid": "test-48",
+  "idx": 48,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The customer searched his wallet.",
+    "choice2": "The customer handed her money.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The cashier opened the cash register.",
+  "text_b": null
+}
+, 'test-49': {
+  "guid": "test-49",
+  "idx": 49,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "People gave him change.",
+    "choice2": "He sent the crowd away.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The street musician attracted a crowd.",
+  "text_b": null
+}
+, 'test-50': {
+  "guid": "test-50",
+  "idx": 50,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He missed his parents.",
+    "choice2": "It was snack time.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The little boy cried to his babysitter.",
+  "text_b": null
+}
+, 'test-51': {
+  "guid": "test-51",
+  "idx": 51,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The pilot navigated away from the storm.",
+    "choice2": "The pilot flew through the storm.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The pilot's radar detected a storm.",
+  "text_b": null
+}
+, 'test-52': {
+  "guid": "test-52",
+  "idx": 52,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The leaves turned colors.",
+    "choice2": "The leaves accumulated on the ground.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The tree shed its leaves.",
+  "text_b": null
+}
+, 'test-53': {
+  "guid": "test-53",
+  "idx": 53,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He decided to play a card game with his sister.",
+    "choice2": "He decided to play a practical joke on his sister.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy was in a mischievous mood.",
+  "text_b": null
+}
+, 'test-54': {
+  "guid": "test-54",
+  "idx": 54,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His father gave him a soda to drink.",
+    "choice2": "His father stopped the car at a gas station.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child complained that he had to go to the bathroom.",
+  "text_b": null
+}
+, 'test-55': {
+  "guid": "test-55",
+  "idx": 55,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fish leapt out of the tank.",
+    "choice2": "The fish swam towards the food.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child sprinkled fish food into the tank.",
+  "text_b": null
+}
+, 'test-56': {
+  "guid": "test-56",
+  "idx": 56,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She switched her party affiliation.",
+    "choice2": "She engaged in a protest.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman's political views changed.",
+  "text_b": null
+}
+, 'test-57': {
+  "guid": "test-57",
+  "idx": 57,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned on the faucet.",
+    "choice2": "I poured drain cleaner into it.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The bathroom sink was clogged.",
+  "text_b": null
+}
+, 'test-58': {
+  "guid": "test-58",
+  "idx": 58,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The train arrived at the station.",
+    "choice2": "The train blared its whistle.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The passengers got off the train.",
+  "text_b": null
+}
+, 'test-59': {
+  "guid": "test-59",
+  "idx": 59,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He put a stamp on the envelope.",
+    "choice2": "He sealed the envelope shut.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man pressed down on the moist flap of the envelope.",
+  "text_b": null
+}
+, 'test-60': {
+  "guid": "test-60",
+  "idx": 60,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They enjoyed each other's company.",
+    "choice2": "They moved to different cities.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The friends lost touch.",
+  "text_b": null
+}
+, 'test-61': {
+  "guid": "test-61",
+  "idx": 61,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was fired from her position.",
+    "choice2": "She went on maternity leave.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The accountant mismanaged the company's funds.",
+  "text_b": null
+}
+, 'test-62': {
+  "guid": "test-62",
+  "idx": 62,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I heard the clock tick.",
+    "choice2": "I wanted to check the time.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I looked at the clock.",
+  "text_b": null
+}
+, 'test-63': {
+  "guid": "test-63",
+  "idx": 63,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I wrote the essay by hand.",
+    "choice2": "My wife and I held hands.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "My hand cramped up.",
+  "text_b": null
+}
+, 'test-64': {
+  "guid": "test-64",
+  "idx": 64,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I replaced the bolt.",
+    "choice2": "I twisted the wrench.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The bolt tightened.",
+  "text_b": null
+}
+, 'test-65': {
+  "guid": "test-65",
+  "idx": 65,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The couple moved into the apartment.",
+    "choice2": "The city condemned the apartment.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The couple signed a lease for an apartment.",
+  "text_b": null
+}
+, 'test-66': {
+  "guid": "test-66",
+  "idx": 66,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She wanted to watch the sunset.",
+    "choice2": "She thought she saw lightning.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman sat outside on the porch.",
+  "text_b": null
+}
+, 'test-67': {
+  "guid": "test-67",
+  "idx": 67,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He couldn't swim.",
+    "choice2": "The water was shallow.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man wore a lifejacket in the water.",
+  "text_b": null
+}
+, 'test-68': {
+  "guid": "test-68",
+  "idx": 68,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She deleted the document.",
+    "choice2": "She hit the backspace key.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman made a typo in the word processor.",
+  "text_b": null
+}
+, 'test-69': {
+  "guid": "test-69",
+  "idx": 69,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She got a bad grade.",
+    "choice2": "She won a contest.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl bragged to her friends.",
+  "text_b": null
+}
+, 'test-70': {
+  "guid": "test-70",
+  "idx": 70,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It poured overnight.",
+    "choice2": "It was full of weeds.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The lawn was muddy.",
+  "text_b": null
+}
+, 'test-71': {
+  "guid": "test-71",
+  "idx": 71,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She stayed the night in a hotel.",
+    "choice2": "She forgot to set her alarm clock.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman overslept.",
+  "text_b": null
+}
+, 'test-72': {
+  "guid": "test-72",
+  "idx": 72,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He sat in the shade.",
+    "choice2": "He went to the beach.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man put on sunscreen.",
+  "text_b": null
+}
+, 'test-73': {
+  "guid": "test-73",
+  "idx": 73,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The researchers retracted the theory.",
+    "choice2": "Individuals accepted the theory.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The researchers proved the theory.",
+  "text_b": null
+}
+, 'test-74': {
+  "guid": "test-74",
+  "idx": 74,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The game went into overtime.",
+    "choice2": "The referee made a bad call.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The fans at the game booed.",
+  "text_b": null
+}
+, 'test-75': {
+  "guid": "test-75",
+  "idx": 75,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I shut the lock.",
+    "choice2": "The lock popped open.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I entered my combination on the lock.",
+  "text_b": null
+}
+, 'test-76': {
+  "guid": "test-76",
+  "idx": 76,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The father handed his son some money.",
+    "choice2": "The father grabbed his son's hand.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The crowd intensified.",
+  "text_b": null
+}
+, 'test-77': {
+  "guid": "test-77",
+  "idx": 77,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I gathered the snow into a snowball.",
+    "choice2": "I shoveled the snow out of the way.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The snow was blocking the driveway.",
+  "text_b": null
+}
+, 'test-78': {
+  "guid": "test-78",
+  "idx": 78,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The kayak reached the shore.",
+    "choice2": "The kayak hit a wave.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The kayakers paddled their oars.",
+  "text_b": null
+}
+, 'test-79': {
+  "guid": "test-79",
+  "idx": 79,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She let go of the handlebars.",
+    "choice2": "She crashed into a fence.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl lost control of her bike.",
+  "text_b": null
+}
+, 'test-80': {
+  "guid": "test-80",
+  "idx": 80,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Water sprinkled onto my skin.",
+    "choice2": "I felt cool air pass over me.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I turned on the fan.",
+  "text_b": null
+}
+, 'test-81': {
+  "guid": "test-81",
+  "idx": 81,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They were drenched.",
+    "choice2": "They saw a shark.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The surfers returned to the beach.",
+  "text_b": null
+}
+, 'test-82': {
+  "guid": "test-82",
+  "idx": 82,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The water drained out of the tub.",
+    "choice2": "The water splashed onto the floor.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I pulled the drain plug in the bathtub.",
+  "text_b": null
+}
+, 'test-83': {
+  "guid": "test-83",
+  "idx": 83,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He accused her of infidelity.",
+    "choice2": "He confessed his infidelity to her.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The husband felt guilty about cheating on his wife.",
+  "text_b": null
+}
+, 'test-84': {
+  "guid": "test-84",
+  "idx": 84,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I waited for the ink to dry.",
+    "choice2": "I spilled water on the poster.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The ink on the poster smeared.",
+  "text_b": null
+}
+, 'test-85': {
+  "guid": "test-85",
+  "idx": 85,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He had a nightmare.",
+    "choice2": "He wet the bed.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The child woke up screaming.",
+  "text_b": null
+}
+, 'test-86': {
+  "guid": "test-86",
+  "idx": 86,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His father sat down at the table.",
+    "choice2": "His father lectured him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy put his feet up on the table.",
+  "text_b": null
+}
+, 'test-87': {
+  "guid": "test-87",
+  "idx": 87,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I shouted his name.",
+    "choice2": "I waved my arms.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "My friend turned his head in my direction.",
+  "text_b": null
+}
+, 'test-88': {
+  "guid": "test-88",
+  "idx": 88,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The citizens staged a revolt.",
+    "choice2": "The citizens registered to vote.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The government oppressed its citizens.",
+  "text_b": null
+}
+, 'test-89': {
+  "guid": "test-89",
+  "idx": 89,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He pitched a tent.",
+    "choice2": "He screamed for help.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy was lost in the woods.",
+  "text_b": null
+}
+, 'test-90': {
+  "guid": "test-90",
+  "idx": 90,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She wanted to learn how to draw.",
+    "choice2": "She wanted to learn about other cultures.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman travelled abroad.",
+  "text_b": null
+}
+, 'test-91': {
+  "guid": "test-91",
+  "idx": 91,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His coworker got a promotion.",
+    "choice2": "His coworker worked late.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man was jealous of his coworker.",
+  "text_b": null
+}
+, 'test-92': {
+  "guid": "test-92",
+  "idx": 92,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was hallucinating.",
+    "choice2": "He was meditating.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man witnessed aliens.",
+  "text_b": null
+}
+, 'test-93': {
+  "guid": "test-93",
+  "idx": 93,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He put bleach in it.",
+    "choice2": "He put shampoo in it.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's hair turned blonde.",
+  "text_b": null
+}
+, 'test-94': {
+  "guid": "test-94",
+  "idx": 94,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She critiqued her previous work.",
+    "choice2": "She felt a stroke of inspiration.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The artist created new work.",
+  "text_b": null
+}
+, 'test-95': {
+  "guid": "test-95",
+  "idx": 95,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was discharged from the military.",
+    "choice2": "He was going to college.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The son moved away from home.",
+  "text_b": null
+}
+, 'test-96': {
+  "guid": "test-96",
+  "idx": 96,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The shelves were covered with dust.",
+    "choice2": "An earthquake shook the bookcase.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Books fell out of the bookcase.",
+  "text_b": null
+}
+, 'test-97': {
+  "guid": "test-97",
+  "idx": 97,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned on a light.",
+    "choice2": "I reset the circuit breaker.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The electricity in my house shut off.",
+  "text_b": null
+}
+, 'test-98': {
+  "guid": "test-98",
+  "idx": 98,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It looked scary.",
+    "choice2": "It looked fun.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "We rode the roller coaster.",
+  "text_b": null
+}
+, 'test-99': {
+  "guid": "test-99",
+  "idx": 99,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I poured butter into the bag.",
+    "choice2": "I heated it in the microwave.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The bag of popcorn began to pop.",
+  "text_b": null
+}
+, 'test-100': {
+  "guid": "test-100",
+  "idx": 100,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The electricity in the neighborhood went out.",
+    "choice2": "The forecast predicted heavy winds.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "A tree fell on the power line.",
+  "text_b": null
+}
+, 'test-101': {
+  "guid": "test-101",
+  "idx": 101,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He bored the audience.",
+    "choice2": "He offended the audience.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The speaker made politically incorrect comments.",
+  "text_b": null
+}
+, 'test-102': {
+  "guid": "test-102",
+  "idx": 102,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A bead of sweat dripped from my face.",
+    "choice2": "A drop of blood formed on my finger.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I pricked myself with the pin.",
+  "text_b": null
+}
+, 'test-103': {
+  "guid": "test-103",
+  "idx": 103,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was hungry.",
+    "choice2": "It was dead.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The fish floated on the surface of the tank.",
+  "text_b": null
+}
+, 'test-104': {
+  "guid": "test-104",
+  "idx": 104,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He had a cold.",
+    "choice2": "He quit smoking.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's voice sounded hoarse.",
+  "text_b": null
+}
+, 'test-105': {
+  "guid": "test-105",
+  "idx": 105,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The elevator arrived at the designated floor.",
+    "choice2": "The elevator got stuck between floors.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The elevator doors opened.",
+  "text_b": null
+}
+, 'test-106': {
+  "guid": "test-106",
+  "idx": 106,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He lied to his parents.",
+    "choice2": "His parents grounded him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teenager snuck out of the house.",
+  "text_b": null
+}
+, 'test-107': {
+  "guid": "test-107",
+  "idx": 107,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The toilet overflowed.",
+    "choice2": "The water heater broke.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The bathroom flooded.",
+  "text_b": null
+}
+, 'test-108': {
+  "guid": "test-108",
+  "idx": 108,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The owner put a collar on the puppy.",
+    "choice2": "The owner kept the puppy on a leash.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The puppy stayed near its owner.",
+  "text_b": null
+}
+, 'test-109': {
+  "guid": "test-109",
+  "idx": 109,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He stood under the sprawling tree.",
+    "choice2": "He stood over the calm lake.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man caught his reflection.",
+  "text_b": null
+}
+, 'test-110': {
+  "guid": "test-110",
+  "idx": 110,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I called her back.",
+    "choice2": "I met her for dinner.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I missed my girlfriend's phone call.",
+  "text_b": null
+}
+, 'test-111': {
+  "guid": "test-111",
+  "idx": 111,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Their dog ran away from home.",
+    "choice2": "Expensive jewelry was missing from their home.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The family searched the neighborhood.",
+  "text_b": null
+}
+, 'test-112': {
+  "guid": "test-112",
+  "idx": 112,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The weather was chilly.",
+    "choice2": "My chest felt tight.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I saw my breath when I exhaled.",
+  "text_b": null
+}
+, 'test-113': {
+  "guid": "test-113",
+  "idx": 113,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They wanted better working conditions.",
+    "choice2": "Their employer raised their wages.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The employees formed a union.",
+  "text_b": null
+}
+, 'test-114': {
+  "guid": "test-114",
+  "idx": 114,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A rotting smell filled the kitchen.",
+    "choice2": "A warm aroma filled the kitchen.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I baked an apple pie.",
+  "text_b": null
+}
+, 'test-115': {
+  "guid": "test-115",
+  "idx": 115,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She wore high heels.",
+    "choice2": "She took off her shoes.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman struggled to walk.",
+  "text_b": null
+}
+, 'test-116': {
+  "guid": "test-116",
+  "idx": 116,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The water boiled.",
+    "choice2": "I covered the pot.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Steam rose off of the pot of water.",
+  "text_b": null
+}
+, 'test-117': {
+  "guid": "test-117",
+  "idx": 117,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I wore sandals.",
+    "choice2": "I wore boots.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "All my socks were in the laundry.",
+  "text_b": null
+}
+, 'test-118': {
+  "guid": "test-118",
+  "idx": 118,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He lost the support of voters.",
+    "choice2": "He was accused of corruption.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The politician's argument was considered absurd.",
+  "text_b": null
+}
+, 'test-119': {
+  "guid": "test-119",
+  "idx": 119,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The couple got pregnant.",
+    "choice2": "The couple eloped.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "Everyone disapproved of the couple's engagement.",
+  "text_b": null
+}
+, 'test-120': {
+  "guid": "test-120",
+  "idx": 120,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The millionaire wanted the building torn down.",
+    "choice2": "The millionaire contributed the funds to build it.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The building was dedicated to the millionaire.",
+  "text_b": null
+}
+, 'test-121': {
+  "guid": "test-121",
+  "idx": 121,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The sales associate saw the girl put merchandise in her purse.",
+    "choice2": "The sales associate helped the girl find the purse she liked.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The sale associate accused the girl of stealing.",
+  "text_b": null
+}
+, 'test-122': {
+  "guid": "test-122",
+  "idx": 122,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Soldiers were sent out to fight.",
+    "choice2": "Soldiers were reunited with their families.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The country declared war on the neighboring territory.",
+  "text_b": null
+}
+, 'test-123': {
+  "guid": "test-123",
+  "idx": 123,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A riot broke loose in front of the courthouse.",
+    "choice2": "A couple exchanged vows in front of the courthouse.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The court upheld the controversial ruling.",
+  "text_b": null
+}
+, 'test-124': {
+  "guid": "test-124",
+  "idx": 124,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She took the cookies out of the jar.",
+    "choice2": "She left the cookies in the oven.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl smelled something burning.",
+  "text_b": null
+}
+, 'test-125': {
+  "guid": "test-125",
+  "idx": 125,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The storm worsened.",
+    "choice2": "I dashed to get inside.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The rain was pouring down.",
+  "text_b": null
+}
+, 'test-126': {
+  "guid": "test-126",
+  "idx": 126,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The elevator stopped functioning.",
+    "choice2": "The fire alarm went off.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The building was evacuated.",
+  "text_b": null
+}
+, 'test-127': {
+  "guid": "test-127",
+  "idx": 127,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The father bought his son a beer.",
+    "choice2": "The father kicked his son out of the house.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The father resented his son's alcoholism.",
+  "text_b": null
+}
+, 'test-128': {
+  "guid": "test-128",
+  "idx": 128,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The secretary went home for the day.",
+    "choice2": "The elevator was out of order.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The lawyer took the stairs up to her office.",
+  "text_b": null
+}
+, 'test-129': {
+  "guid": "test-129",
+  "idx": 129,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His friend interrupted him.",
+    "choice2": "His friend bought him lunch.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man became annoyed with his friend.",
+  "text_b": null
+}
+, 'test-130': {
+  "guid": "test-130",
+  "idx": 130,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The cashier gave the girl her change.",
+    "choice2": "The cashier forgot to give the girl a receipt.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl handed her money to the cashier.",
+  "text_b": null
+}
+, 'test-131': {
+  "guid": "test-131",
+  "idx": 131,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was paralyzed in an accident.",
+    "choice2": "She entered the hospital in a stretcher.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman was put in a wheelchair.",
+  "text_b": null
+}
+, 'test-132': {
+  "guid": "test-132",
+  "idx": 132,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The country was commemorating its independence.",
+    "choice2": "The country was facing economic hardship.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Citizens hung the national flag up outside their homes.",
+  "text_b": null
+}
+, 'test-133': {
+  "guid": "test-133",
+  "idx": 133,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They disappointed their fans.",
+    "choice2": "They inspired their fans.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The team lost the tournament.",
+  "text_b": null
+}
+, 'test-134': {
+  "guid": "test-134",
+  "idx": 134,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I felt embarrassed.",
+    "choice2": "I felt proud.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My friend pointed out that I had food stuck in my teeth.",
+  "text_b": null
+}
+, 'test-135': {
+  "guid": "test-135",
+  "idx": 135,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He paid attention in class.",
+    "choice2": "He forgot to study.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy failed his history exam.",
+  "text_b": null
+}
+, 'test-136': {
+  "guid": "test-136",
+  "idx": 136,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "An earthquake hit the city.",
+    "choice2": "Crime rates in the city increased.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The downtown building collapsed.",
+  "text_b": null
+}
+, 'test-137': {
+  "guid": "test-137",
+  "idx": 137,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He begged her to take him back.",
+    "choice2": "She introduced him to her parents.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man's girlfriend broke up with him.",
+  "text_b": null
+}
+, 'test-138': {
+  "guid": "test-138",
+  "idx": 138,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The ball rolled away.",
+    "choice2": "Their heads collided.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The two children simultaneously reached down to retrieve the ball.",
+  "text_b": null
+}
+, 'test-139': {
+  "guid": "test-139",
+  "idx": 139,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "There was cardboard in the garbage can.",
+    "choice2": "The lid was off the garbage can.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The raccoon ransacked the garbage can.",
+  "text_b": null
+}
+, 'test-140': {
+  "guid": "test-140",
+  "idx": 140,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was cheap.",
+    "choice2": "It was dull.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy sharpened the pencil.",
+  "text_b": null
+}
+, 'test-141': {
+  "guid": "test-141",
+  "idx": 141,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She lost her receipt.",
+    "choice2": "The dress didn't fit.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The cashier denied the woman a refund for the dress.",
+  "text_b": null
+}
+, 'test-142': {
+  "guid": "test-142",
+  "idx": 142,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It healed quickly.",
+    "choice2": "It left a scar.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The scratch in my skin was deep.",
+  "text_b": null
+}
+, 'test-143': {
+  "guid": "test-143",
+  "idx": 143,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was staring at the ground.",
+    "choice2": "He was talking to himself.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man received strange looks from passengers on the train.",
+  "text_b": null
+}
+, 'test-144': {
+  "guid": "test-144",
+  "idx": 144,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Ants crawled to the crumbs.",
+    "choice2": "The child put the bread away.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child left crumbs on the floor.",
+  "text_b": null
+}
+, 'test-145': {
+  "guid": "test-145",
+  "idx": 145,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The woman's sister folded her hands.",
+    "choice2": "The woman's sister began to cry.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman handed her sister a tissue.",
+  "text_b": null
+}
+, 'test-146': {
+  "guid": "test-146",
+  "idx": 146,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His lips were chapped.",
+    "choice2": "He worried about bad breath.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man took a mint.",
+  "text_b": null
+}
+, 'test-147': {
+  "guid": "test-147",
+  "idx": 147,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They anticipated traffic around the theatre.",
+    "choice2": "They got directions to the theatre.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The couple left early for the show.",
+  "text_b": null
+}
+, 'test-148': {
+  "guid": "test-148",
+  "idx": 148,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her boss praised her.",
+    "choice2": "Her coworker covered for her.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman stayed home from work.",
+  "text_b": null
+}
+, 'test-149': {
+  "guid": "test-149",
+  "idx": 149,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He supported their cause.",
+    "choice2": "He denounced them as crazy.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man signed the activists' petition.",
+  "text_b": null
+}
+, 'test-150': {
+  "guid": "test-150",
+  "idx": 150,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He had stage fright.",
+    "choice2": "He memorized his lines.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The actor's heart was fluttering before his performance.",
+  "text_b": null
+}
+, 'test-151': {
+  "guid": "test-151",
+  "idx": 151,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I counted my cash.",
+    "choice2": "I unfolded a map.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I was lost.",
+  "text_b": null
+}
+, 'test-152': {
+  "guid": "test-152",
+  "idx": 152,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was eaten.",
+    "choice2": "It shriveled up.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The ripe fruit lingered in the sun.",
+  "text_b": null
+}
+, 'test-153': {
+  "guid": "test-153",
+  "idx": 153,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned the ignition.",
+    "choice2": "The engine overheated.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The car broke down.",
+  "text_b": null
+}
+, 'test-154': {
+  "guid": "test-154",
+  "idx": 154,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He went to see a psychiatrist.",
+    "choice2": "He stayed in bed for several days.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man hurt his back.",
+  "text_b": null
+}
+, 'test-155': {
+  "guid": "test-155",
+  "idx": 155,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was out of firewood.",
+    "choice2": "It was cold in the house.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I started a fire in the fireplace.",
+  "text_b": null
+}
+, 'test-156': {
+  "guid": "test-156",
+  "idx": 156,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She got a cramp in her side.",
+    "choice2": "She got a second wind.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman stopped jogging.",
+  "text_b": null
+}
+, 'test-157': {
+  "guid": "test-157",
+  "idx": 157,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My neighbor invited me in.",
+    "choice2": "My neighbor left her house.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I knocked on my neighbor's door.",
+  "text_b": null
+}
+, 'test-158': {
+  "guid": "test-158",
+  "idx": 158,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her husband misunderstood her concerns.",
+    "choice2": "Her husband kissed her goodbye.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman sighed with frustration.",
+  "text_b": null
+}
+, 'test-159': {
+  "guid": "test-159",
+  "idx": 159,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The student answered the question correctly.",
+    "choice2": "The student hesitated to answer the question.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teacher commended the student.",
+  "text_b": null
+}
+, 'test-160': {
+  "guid": "test-160",
+  "idx": 160,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She went to the farm.",
+    "choice2": "She went to the supermarket.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman ran out of eggs.",
+  "text_b": null
+}
+, 'test-161': {
+  "guid": "test-161",
+  "idx": 161,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I revealed a secret to him.",
+    "choice2": "I gave him a hug.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I encountered an old friend.",
+  "text_b": null
+}
+, 'test-162': {
+  "guid": "test-162",
+  "idx": 162,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She caught a fish.",
+    "choice2": "It looked contaminated.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman avoided going in the lake.",
+  "text_b": null
+}
+, 'test-163': {
+  "guid": "test-163",
+  "idx": 163,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His umbrella was broken.",
+    "choice2": "His bike was stolen.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The student arrived to class soaking wet.",
+  "text_b": null
+}
+, 'test-164': {
+  "guid": "test-164",
+  "idx": 164,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The user clicked the mouse.",
+    "choice2": "The user shifted the mouse.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The cursor on the computer screen moved.",
+  "text_b": null
+}
+, 'test-165': {
+  "guid": "test-165",
+  "idx": 165,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "An accident occurred on the main road.",
+    "choice2": "She followed the truck in front of her.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The driver took a detour.",
+  "text_b": null
+}
+, 'test-166': {
+  "guid": "test-166",
+  "idx": 166,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The linen dried.",
+    "choice2": "The linen stained.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I hung the wet linen on the outdoor clothesline.",
+  "text_b": null
+}
+, 'test-167': {
+  "guid": "test-167",
+  "idx": 167,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The sunlight was bright.",
+    "choice2": "She hailed a cab.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman put on her shades.",
+  "text_b": null
+}
+, 'test-168': {
+  "guid": "test-168",
+  "idx": 168,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He wished it were summer.",
+    "choice2": "He thought it was beautiful.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man gazed at the night sky.",
+  "text_b": null
+}
+, 'test-169': {
+  "guid": "test-169",
+  "idx": 169,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I went to bed early.",
+    "choice2": "I stayed up all night.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I felt exhausted.",
+  "text_b": null
+}
+, 'test-170': {
+  "guid": "test-170",
+  "idx": 170,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was growing out his hair.",
+    "choice2": "His hair was getting long.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man went to the barber.",
+  "text_b": null
+}
+, 'test-171': {
+  "guid": "test-171",
+  "idx": 171,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The boy welcomed the new classmate.",
+    "choice2": "The boy disliked the new classmate.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy played mean tricks on his new classmate.",
+  "text_b": null
+}
+, 'test-172': {
+  "guid": "test-172",
+  "idx": 172,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was eating cookies.",
+    "choice2": "I was baking bread.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I craved a glass of milk.",
+  "text_b": null
+}
+, 'test-173': {
+  "guid": "test-173",
+  "idx": 173,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The driver turned on the headlights.",
+    "choice2": "The driver shifted the car into reverse.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "It began to rain.",
+  "text_b": null
+}
+, 'test-174': {
+  "guid": "test-174",
+  "idx": 174,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I parked across the street.",
+    "choice2": "I parked near the entrance.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The parking lot of the building was empty.",
+  "text_b": null
+}
+, 'test-175': {
+  "guid": "test-175",
+  "idx": 175,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She had writer's block.",
+    "choice2": "She edited the draft.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The writer missed her deadline for the draft submission.",
+  "text_b": null
+}
+, 'test-176': {
+  "guid": "test-176",
+  "idx": 176,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I asked to speak to a supervisor.",
+    "choice2": "I provided my identification number.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The associate hung up on me.",
+  "text_b": null
+}
+, 'test-177': {
+  "guid": "test-177",
+  "idx": 177,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The doorbell rang.",
+    "choice2": "The curtains shuddered.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The wind blew through the open window.",
+  "text_b": null
+}
+, 'test-178': {
+  "guid": "test-178",
+  "idx": 178,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I unplugged the lamp.",
+    "choice2": "I blew a fuse.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The electricity in my house shut off.",
+  "text_b": null
+}
+, 'test-179': {
+  "guid": "test-179",
+  "idx": 179,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He flexed his muscles in the mirror.",
+    "choice2": "He lifted the bar over his head.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The weightlifter grunted.",
+  "text_b": null
+}
+, 'test-180': {
+  "guid": "test-180",
+  "idx": 180,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He got out a calculator.",
+    "choice2": "He got confused.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The student tried to do the math in his head.",
+  "text_b": null
+}
+, 'test-181': {
+  "guid": "test-181",
+  "idx": 181,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The father changed the baby's diaper.",
+    "choice2": "The father gently rocked the baby.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The baby fell asleep.",
+  "text_b": null
+}
+, 'test-182': {
+  "guid": "test-182",
+  "idx": 182,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The boy got a concussion.",
+    "choice2": "The boy got soaked.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl threw the water balloon at the boy.",
+  "text_b": null
+}
+, 'test-183': {
+  "guid": "test-183",
+  "idx": 183,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The photos turned out blurry.",
+    "choice2": "Everyone in the photos refused to smile.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The photographer forgot to use the flash on the camera.",
+  "text_b": null
+}
+, 'test-184': {
+  "guid": "test-184",
+  "idx": 184,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was lonely.",
+    "choice2": "I was out of town.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I declined the invitation to the birthday party.",
+  "text_b": null
+}
+, 'test-185': {
+  "guid": "test-185",
+  "idx": 185,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I felt energetic.",
+    "choice2": "I was scared.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I exercised.",
+  "text_b": null
+}
+, 'test-186': {
+  "guid": "test-186",
+  "idx": 186,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It soaked up water.",
+    "choice2": "Water seeped out of it.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I squeezed the damp sponge.",
+  "text_b": null
+}
+, 'test-187': {
+  "guid": "test-187",
+  "idx": 187,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The resort was booked.",
+    "choice2": "The resort was on an island.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The vacationers took a ferry to the resort.",
+  "text_b": null
+}
+, 'test-188': {
+  "guid": "test-188",
+  "idx": 188,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was afraid of needles.",
+    "choice2": "She wanted to rebel.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teenager got a tattoo.",
+  "text_b": null
+}
+, 'test-189': {
+  "guid": "test-189",
+  "idx": 189,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I became suspicious.",
+    "choice2": "I called the police.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "An unfamiliar car parked outside my house.",
+  "text_b": null
+}
+, 'test-190': {
+  "guid": "test-190",
+  "idx": 190,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The evidence implicated him.",
+    "choice2": " There was no evidence against him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The criminal turned himself in.",
+  "text_b": null
+}
+, 'test-191': {
+  "guid": "test-191",
+  "idx": 191,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He cut out sweets.",
+    "choice2": "He avoided caffeine.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The heavyset man decided to lose weight.",
+  "text_b": null
+}
+, 'test-192': {
+  "guid": "test-192",
+  "idx": 192,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She slid.",
+    "choice2": "She shivered.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl stepped on the ice.",
+  "text_b": null
+}
+, 'test-193': {
+  "guid": "test-193",
+  "idx": 193,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She stayed up all night.",
+    "choice2": "She put her son to bed.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman had rings under her eyes.",
+  "text_b": null
+}
+, 'test-194': {
+  "guid": "test-194",
+  "idx": 194,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The volcano erupted.",
+    "choice2": "The volcano was dormant.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Lava flowed from the volcano.",
+  "text_b": null
+}
+, 'test-195': {
+  "guid": "test-195",
+  "idx": 195,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She knew everyone at the party.",
+    "choice2": "She wanted to leave the party.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman put her shoes on.",
+  "text_b": null
+}
+, 'test-196': {
+  "guid": "test-196",
+  "idx": 196,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She let me pass through the tollbooth.",
+    "choice2": "She detained me at the tollbooth.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I paid the tollbooth attendant.",
+  "text_b": null
+}
+, 'test-197': {
+  "guid": "test-197",
+  "idx": 197,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He sold his company stock.",
+    "choice2": "He squandered his fortune.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The executive went bankrupt.",
+  "text_b": null
+}
+, 'test-198': {
+  "guid": "test-198",
+  "idx": 198,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The doctor was on leave.",
+    "choice2": "The man felt ill.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man went to the doctor.",
+  "text_b": null
+}
+, 'test-199': {
+  "guid": "test-199",
+  "idx": 199,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The house was on fire.",
+    "choice2": "The house was empty.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I exited my bedroom through the window.",
+  "text_b": null
+}
+, 'test-200': {
+  "guid": "test-200",
+  "idx": 200,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He took a long shower.",
+    "choice2": "He lathered his hands with soap.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy's fingers became pruny.",
+  "text_b": null
+}
+, 'test-201': {
+  "guid": "test-201",
+  "idx": 201,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The milk tasted sour.",
+    "choice2": "My mouth was dry.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I spit out the milk.",
+  "text_b": null
+}
+, 'test-202': {
+  "guid": "test-202",
+  "idx": 202,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was early to work.",
+    "choice2": "I was late to work.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I missed the bus.",
+  "text_b": null
+}
+, 'test-203': {
+  "guid": "test-203",
+  "idx": 203,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The truck sped up.",
+    "choice2": "The car got smashed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The truck collided with the car.",
+  "text_b": null
+}
+, 'test-204': {
+  "guid": "test-204",
+  "idx": 204,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They won.",
+    "choice2": " They dropped out.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The team rigged the contest in their favor.",
+  "text_b": null
+}
+, 'test-205': {
+  "guid": "test-205",
+  "idx": 205,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned over the bottle.",
+    "choice2": "I twisted off the cap.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The soda bottle hissed.",
+  "text_b": null
+}
+, 'test-206': {
+  "guid": "test-206",
+  "idx": 206,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He crawled in through an open window.",
+    "choice2": "He climbed up to the roof.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy was locked out of his house.",
+  "text_b": null
+}
+, 'test-207': {
+  "guid": "test-207",
+  "idx": 207,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The visitor tapped the knocker on the door.",
+    "choice2": "The woman peered through the keyhole in the door.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The doorbell rang.",
+  "text_b": null
+}
+, 'test-208': {
+  "guid": "test-208",
+  "idx": 208,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He got it dry-cleaned.",
+    "choice2": "He hung it in his closet.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man stained his suit.",
+  "text_b": null
+}
+, 'test-209': {
+  "guid": "test-209",
+  "idx": 209,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The toothpaste squirted out of the tube.",
+    "choice2": "The girl spit out the toothpaste.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl squeezed the tube of toothpaste.",
+  "text_b": null
+}
+, 'test-210': {
+  "guid": "test-210",
+  "idx": 210,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Pacifists staged a protest.",
+    "choice2": "Pacifists held a parade.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "Civilian deaths from the war surged.",
+  "text_b": null
+}
+, 'test-211': {
+  "guid": "test-211",
+  "idx": 211,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She tied the ribbon.",
+    "choice2": "The ribbon looked babyish.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl yanked the ribbon out of her hair.",
+  "text_b": null
+}
+, 'test-212': {
+  "guid": "test-212",
+  "idx": 212,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He aged.",
+    "choice2": "He looked younger.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man got plastic surgery.",
+  "text_b": null
+}
+, 'test-213': {
+  "guid": "test-213",
+  "idx": 213,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The egg hatched.",
+    "choice2": "I cracked the egg.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "A baby chicken emerged from the egg.",
+  "text_b": null
+}
+, 'test-214': {
+  "guid": "test-214",
+  "idx": 214,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He died.",
+    "choice2": "He fled.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The prisoner starved.",
+  "text_b": null
+}
+, 'test-215': {
+  "guid": "test-215",
+  "idx": 215,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He climbed up the ladder.",
+    "choice2": "He fell off the ladder.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost his balance on the ladder.",
+  "text_b": null
+}
+, 'test-216': {
+  "guid": "test-216",
+  "idx": 216,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He took a swig of soda.",
+    "choice2": "He opened the soda can.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The child burped.",
+  "text_b": null
+}
+, 'test-217': {
+  "guid": "test-217",
+  "idx": 217,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I relaxed.",
+    "choice2": "I shivered.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "A cold draft came in through the window.",
+  "text_b": null
+}
+, 'test-218': {
+  "guid": "test-218",
+  "idx": 218,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her classmates respected her.",
+    "choice2": "She made good grades.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The student received a scholarship to go to college.",
+  "text_b": null
+}
+, 'test-219': {
+  "guid": "test-219",
+  "idx": 219,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She lived next door to him.",
+    "choice2": "She had a crush on him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl poked fun at the boy.",
+  "text_b": null
+}
+, 'test-220': {
+  "guid": "test-220",
+  "idx": 220,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He incited pity.",
+    "choice2": "He had no money.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The hungry vagrant stole food.",
+  "text_b": null
+}
+, 'test-221': {
+  "guid": "test-221",
+  "idx": 221,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I wanted privacy.",
+    "choice2": "I felt lonely.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I called my friend to chat.",
+  "text_b": null
+}
+, 'test-222': {
+  "guid": "test-222",
+  "idx": 222,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I shook his hand.",
+    "choice2": "I slapped him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man extended his hand to me.",
+  "text_b": null
+}
+, 'test-223': {
+  "guid": "test-223",
+  "idx": 223,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fireworks launched up in the air.",
+    "choice2": "The frisbee soared towards my head.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I ducked.",
+  "text_b": null
+}
+, 'test-224': {
+  "guid": "test-224",
+  "idx": 224,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was worried.",
+    "choice2": "She was surprised.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl bit her nails.",
+  "text_b": null
+}
+, 'test-225': {
+  "guid": "test-225",
+  "idx": 225,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I marked an appointment on the calendar.",
+    "choice2": "It was the beginning of a new month.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I turned the page on the calendar.",
+  "text_b": null
+}
+, 'test-226': {
+  "guid": "test-226",
+  "idx": 226,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He fired his lawyer.",
+    "choice2": "He filed for divorce.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The husband discovered that his wife was having an affair.",
+  "text_b": null
+}
+, 'test-227': {
+  "guid": "test-227",
+  "idx": 227,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The ball bounced.",
+    "choice2": "The ball glowed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl dropped the rubber ball.",
+  "text_b": null
+}
+, 'test-228': {
+  "guid": "test-228",
+  "idx": 228,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She guessed at the answer.",
+    "choice2": "She erased her answer.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl made a mistake on her exam.",
+  "text_b": null
+}
+, 'test-229': {
+  "guid": "test-229",
+  "idx": 229,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His opponent caught the pass.",
+    "choice2": "His opponent hit the ground.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The player tackled his opponent.",
+  "text_b": null
+}
+, 'test-230': {
+  "guid": "test-230",
+  "idx": 230,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They were ripe.",
+    "choice2": "I watered them.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I picked the tomatoes from the vine.",
+  "text_b": null
+}
+, 'test-231': {
+  "guid": "test-231",
+  "idx": 231,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He met his ex-girlfriend for lunch.",
+    "choice2": "He bought his girlfriend chocolates.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man wanted to act romantic.",
+  "text_b": null
+}
+, 'test-232': {
+  "guid": "test-232",
+  "idx": 232,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I dropped the thermometer.",
+    "choice2": "The weather got warmer.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The mercury in the thermometer rose.",
+  "text_b": null
+}
+, 'test-233': {
+  "guid": "test-233",
+  "idx": 233,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The roof of the courthouse blew off.",
+    "choice2": "The highway became dangerously icy.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "A tornado came through the town.",
+  "text_b": null
+}
+, 'test-234': {
+  "guid": "test-234",
+  "idx": 234,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His grades improved.",
+    "choice2": "He cheated on the exam.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The student received tutoring.",
+  "text_b": null
+}
+, 'test-235': {
+  "guid": "test-235",
+  "idx": 235,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I kneeled down on the ground.",
+    "choice2": "I wrapped myself in a blanket.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I felt comfortable.",
+  "text_b": null
+}
+, 'test-236': {
+  "guid": "test-236",
+  "idx": 236,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It became slippery.",
+    "choice2": "It became shiny.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I polished the stone.",
+  "text_b": null
+}
+, 'test-237': {
+  "guid": "test-237",
+  "idx": 237,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The coffee smelled strong.",
+    "choice2": "The coffee tasted sweet.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I added sugar to the coffee.",
+  "text_b": null
+}
+, 'test-238': {
+  "guid": "test-238",
+  "idx": 238,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He got a paper cut.",
+    "choice2": "He shredded the papers.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man shuffled through the papers.",
+  "text_b": null
+}
+, 'test-239': {
+  "guid": "test-239",
+  "idx": 239,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The nail sunk into the wood.",
+    "choice2": "The nail became rusty.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I pounded the nail with the hammer.",
+  "text_b": null
+}
+, 'test-240': {
+  "guid": "test-240",
+  "idx": 240,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fisherman reeled in the fish.",
+    "choice2": "The fisherman recast the line.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The fish bit the line.",
+  "text_b": null
+}
+, 'test-241': {
+  "guid": "test-241",
+  "idx": 241,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She got a pimple.",
+    "choice2": "She got her braces off.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teenager was embarrassed to go to school.",
+  "text_b": null
+}
+, 'test-242': {
+  "guid": "test-242",
+  "idx": 242,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I received good news.",
+    "choice2": "I lost my patience.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "My facial expression lit up.",
+  "text_b": null
+}
+, 'test-243': {
+  "guid": "test-243",
+  "idx": 243,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The towel was wet.",
+    "choice2": "My hands were wet.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I wiped my hands with a towel.",
+  "text_b": null
+}
+, 'test-244': {
+  "guid": "test-244",
+  "idx": 244,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The stool wobbled underneath him.",
+    "choice2": "He spilled paint on the stool.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost his balance on the stool.",
+  "text_b": null
+}
+, 'test-245': {
+  "guid": "test-245",
+  "idx": 245,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They lost their game.",
+    "choice2": "Their coach cancelled practice.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The teammates directed blame at each other.",
+  "text_b": null
+}
+, 'test-246': {
+  "guid": "test-246",
+  "idx": 246,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I regretted my mistake.",
+    "choice2": "I achieved my goal.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I asked for forgiveness.",
+  "text_b": null
+}
+, 'test-247': {
+  "guid": "test-247",
+  "idx": 247,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He asked her questions about herself.",
+    "choice2": "He talked incessantly about himself.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman became bored with her date.",
+  "text_b": null
+}
+, 'test-248': {
+  "guid": "test-248",
+  "idx": 248,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her cheeks reddened.",
+    "choice2": "Her dimples showed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl flashed a smile.",
+  "text_b": null
+}
+, 'test-249': {
+  "guid": "test-249",
+  "idx": 249,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It passed over the mine.",
+    "choice2": "It sailed into the harbor.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The enemy ship blew up.",
+  "text_b": null
+}
+, 'test-250': {
+  "guid": "test-250",
+  "idx": 250,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He walked into a puddle.",
+    "choice2": "He stepped on broken glass.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man punctured his foot.",
+  "text_b": null
+}
+, 'test-251': {
+  "guid": "test-251",
+  "idx": 251,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They discovered the identity of the murderer.",
+    "choice2": "They found the weapon at the crime scene.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The detectives dusted the crime scene for fingerprints.",
+  "text_b": null
+}
+, 'test-252': {
+  "guid": "test-252",
+  "idx": 252,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I took a detour.",
+    "choice2": "I asked for a ride.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "There was a lot of traffic on the highway.",
+  "text_b": null
+}
+, 'test-253': {
+  "guid": "test-253",
+  "idx": 253,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Many people got sick.",
+    "choice2": "Many people faced unemployment.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The nation's economy declined.",
+  "text_b": null
+}
+, 'test-254': {
+  "guid": "test-254",
+  "idx": 254,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They were about to walk into oncoming traffic.",
+    "choice2": "She recognized them from her neighborhood.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The crossing guard blew her whistle at the children.",
+  "text_b": null
+}
+, 'test-255': {
+  "guid": "test-255",
+  "idx": 255,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He told me the truth.",
+    "choice2": "He made a sarcastic remark.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I rolled my eyes at my friend.",
+  "text_b": null
+}
+, 'test-256': {
+  "guid": "test-256",
+  "idx": 256,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The driver was stranded on the road.",
+    "choice2": "The driver picked up a hitchhiker.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The car ran out of gas.",
+  "text_b": null
+}
+, 'test-257': {
+  "guid": "test-257",
+  "idx": 257,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The baby was delivered.",
+    "choice2": "The woman had morning sickness.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman went into labor.",
+  "text_b": null
+}
+, 'test-258': {
+  "guid": "test-258",
+  "idx": 258,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He took off the hat.",
+    "choice2": "It was windy outside.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's hat blew away.",
+  "text_b": null
+}
+, 'test-259': {
+  "guid": "test-259",
+  "idx": 259,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She received an invitation.",
+    "choice2": "She bought a gift.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl attended her classmate's birthday party.",
+  "text_b": null
+}
+, 'test-260': {
+  "guid": "test-260",
+  "idx": 260,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His mother took his temperature.",
+    "choice2": "His mother took him to the park.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy's forehead felt hot.",
+  "text_b": null
+}
+, 'test-261': {
+  "guid": "test-261",
+  "idx": 261,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He wanted to impress his date.",
+    "choice2": "He put gel in his hair.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man sprayed himself with cologne.",
+  "text_b": null
+}
+, 'test-262': {
+  "guid": "test-262",
+  "idx": 262,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I looked for a flashlight.",
+    "choice2": "I picked up a shovel.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The electricity in the house shut off.",
+  "text_b": null
+}
+, 'test-263': {
+  "guid": "test-263",
+  "idx": 263,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The son graduated from high school.",
+    "choice2": "The mother gave birth to twins.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The family moved into a bigger house.",
+  "text_b": null
+}
+, 'test-264': {
+  "guid": "test-264",
+  "idx": 264,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She wanted to conserve her energy.",
+    "choice2": "She saw the finish line.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The marathoner kept at a slow pace.",
+  "text_b": null
+}
+, 'test-265': {
+  "guid": "test-265",
+  "idx": 265,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The machine spit out the change.",
+    "choice2": "The bag of chips was stuck.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy kicked the vending machine.",
+  "text_b": null
+}
+, 'test-266': {
+  "guid": "test-266",
+  "idx": 266,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I rolled my eyes at him.",
+    "choice2": "I gave him a hug.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My friend's dog died.",
+  "text_b": null
+}
+, 'test-267': {
+  "guid": "test-267",
+  "idx": 267,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He wrote an IOU.",
+    "choice2": "He paid with cash.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The businessman's credit card got declined.",
+  "text_b": null
+}
+, 'test-268': {
+  "guid": "test-268",
+  "idx": 268,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He clipped his nails.",
+    "choice2": "He stubbed his toe.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man cursed.",
+  "text_b": null
+}
+, 'test-269': {
+  "guid": "test-269",
+  "idx": 269,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His brother got in an argument with their parents.",
+    "choice2": "His brother got accepted into law school.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man felt proud of his brother.",
+  "text_b": null
+}
+, 'test-270': {
+  "guid": "test-270",
+  "idx": 270,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She went to the library.",
+    "choice2": "She looked at the stars.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl wanted to learn about the solar system.",
+  "text_b": null
+}
+, 'test-271': {
+  "guid": "test-271",
+  "idx": 271,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I positioned the poster above the door.",
+    "choice2": "I put tape on the back of the poster.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The poster stuck to the wall.",
+  "text_b": null
+}
+, 'test-272': {
+  "guid": "test-272",
+  "idx": 272,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The architect constructed the building.",
+    "choice2": "The architect adjusted the plans.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The client approved the architect's plans for the building.",
+  "text_b": null
+}
+, 'test-273': {
+  "guid": "test-273",
+  "idx": 273,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His hand was shaking.",
+    "choice2": "He licked the spoon.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man dropped his spoon.",
+  "text_b": null
+}
+, 'test-274': {
+  "guid": "test-274",
+  "idx": 274,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The board of directors dissolved the company.",
+    "choice2": "The board of directors found his replacement.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The CEO of the company resigned.",
+  "text_b": null
+}
+, 'test-275': {
+  "guid": "test-275",
+  "idx": 275,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I took a seat in the back row.",
+    "choice2": "I approached the podium.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I arrived late to the lecture.",
+  "text_b": null
+}
+, 'test-276': {
+  "guid": "test-276",
+  "idx": 276,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His family paid his bail.",
+    "choice2": "He attacked a fellow inmate.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man was released from jail.",
+  "text_b": null
+}
+, 'test-277': {
+  "guid": "test-277",
+  "idx": 277,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They sold their house.",
+    "choice2": "Their house caught fire.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The family lost all their belongings.",
+  "text_b": null
+}
+, 'test-278': {
+  "guid": "test-278",
+  "idx": 278,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The can was recycled.",
+    "choice2": "The can got crushed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I stomped on the aluminum can.",
+  "text_b": null
+}
+, 'test-279': {
+  "guid": "test-279",
+  "idx": 279,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She learned to use a computer.",
+    "choice2": "She learned communication skills.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl joined the debate team.",
+  "text_b": null
+}
+, 'test-280': {
+  "guid": "test-280",
+  "idx": 280,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I listened to music.",
+    "choice2": "I did the dishes.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "My mood improved.",
+  "text_b": null
+}
+, 'test-281': {
+  "guid": "test-281",
+  "idx": 281,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They fed the homeless.",
+    "choice2": "They held an auction.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The charity made a goal to raise money.",
+  "text_b": null
+}
+, 'test-282': {
+  "guid": "test-282",
+  "idx": 282,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The passengers giggled.",
+    "choice2": "The passengers screamed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The roller coaster plunged down the steep drop.",
+  "text_b": null
+}
+, 'test-283': {
+  "guid": "test-283",
+  "idx": 283,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I checked the mailbox upon leaving the house.",
+    "choice2": "I slammed the door upon leaving the house.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I was furious.",
+  "text_b": null
+}
+, 'test-284': {
+  "guid": "test-284",
+  "idx": 284,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He travelled north.",
+    "choice2": "He got up early.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man wanted to watch the sunrise.",
+  "text_b": null
+}
+, 'test-285': {
+  "guid": "test-285",
+  "idx": 285,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I recycled the paper.",
+    "choice2": "The paper creased.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I folded the paper.",
+  "text_b": null
+}
+, 'test-286': {
+  "guid": "test-286",
+  "idx": 286,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Leaders of other countries formed an alliance.",
+    "choice2": "Leaders of other countries sent emergency relief.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The nation endured a natural disaster.",
+  "text_b": null
+}
+, 'test-287': {
+  "guid": "test-287",
+  "idx": 287,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He climbed out of the pool.",
+    "choice2": "He fell into the pool.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy's clothes got soaked.",
+  "text_b": null
+}
+, 'test-288': {
+  "guid": "test-288",
+  "idx": 288,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was due to be returned to the library.",
+    "choice2": "He borrowed it from a friend.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The student rushed to finish the book.",
+  "text_b": null
+}
+, 'test-289': {
+  "guid": "test-289",
+  "idx": 289,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was thrown in jail.",
+    "choice2": "He was convicted of murder.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The criminal was executed.",
+  "text_b": null
+}
+, 'test-290': {
+  "guid": "test-290",
+  "idx": 290,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I opened the curtains.",
+    "choice2": "I unlocked the door.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Sunlight entered the room.",
+  "text_b": null
+}
+, 'test-291': {
+  "guid": "test-291",
+  "idx": 291,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her wig came off.",
+    "choice2": "She went bald.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I yanked the imposter's hair.",
+  "text_b": null
+}
+, 'test-292': {
+  "guid": "test-292",
+  "idx": 292,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He found the manuscript compelling.",
+    "choice2": "He deemed the sentence unclear.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The editor reworded a sentence in the manuscript.",
+  "text_b": null
+}
+, 'test-293': {
+  "guid": "test-293",
+  "idx": 293,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She realized the card was missing.",
+    "choice2": "She realized the card was expired.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman cancelled her credit card account.",
+  "text_b": null
+}
+, 'test-294': {
+  "guid": "test-294",
+  "idx": 294,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They attended college.",
+    "choice2": "They got married.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man and woman fell in love.",
+  "text_b": null
+}
+, 'test-295': {
+  "guid": "test-295",
+  "idx": 295,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned up the volume.",
+    "choice2": "I composed my own song.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The music was too faint to hear.",
+  "text_b": null
+}
+, 'test-296': {
+  "guid": "test-296",
+  "idx": 296,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The girl ruffled it.",
+    "choice2": "The girl pulled it.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy's hair was sticking up.",
+  "text_b": null
+}
+, 'test-297': {
+  "guid": "test-297",
+  "idx": 297,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I sprayed myself with bug repellent.",
+    "choice2": "I stepped on the bug.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The bug got squashed.",
+  "text_b": null
+}
+, 'test-298': {
+  "guid": "test-298",
+  "idx": 298,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I woke up.",
+    "choice2": "I relaxed.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I opened my eyes.",
+  "text_b": null
+}
+, 'test-299': {
+  "guid": "test-299",
+  "idx": 299,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I asked him to turn it down.",
+    "choice2": "I asked to borrow the CD from him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My neighbor's music was blaring.",
+  "text_b": null
+}
+, 'test-300': {
+  "guid": "test-300",
+  "idx": 300,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was frugal with his earnings.",
+    "choice2": "He earned below minimum wage.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's family lived in poverty.",
+  "text_b": null
+}
+, 'test-301': {
+  "guid": "test-301",
+  "idx": 301,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He looked for a job.",
+    "choice2": "He took up a hobby.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The student graduated from the university.",
+  "text_b": null
+}
+, 'test-302': {
+  "guid": "test-302",
+  "idx": 302,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The paint splattered everywhere.",
+    "choice2": "The paint turned green.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The artist mixed yellow paint into blue paint.",
+  "text_b": null
+}
+, 'test-303': {
+  "guid": "test-303",
+  "idx": 303,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I ran out of things to talk about.",
+    "choice2": "The conversation became tense.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I changed the topic of conversation.",
+  "text_b": null
+}
+, 'test-304': {
+  "guid": "test-304",
+  "idx": 304,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I welcomed him back home.",
+    "choice2": "I gave him the cold shoulder.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My brother was released from the hospital.",
+  "text_b": null
+}
+, 'test-305': {
+  "guid": "test-305",
+  "idx": 305,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The opening scene of the play began.",
+    "choice2": "The actors in the play exited the stage.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The curtain on the stage went up.",
+  "text_b": null
+}
+, 'test-306': {
+  "guid": "test-306",
+  "idx": 306,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The kidnapper threatened to hurt the hostage.",
+    "choice2": "The kidnapper left the hostage by himself.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The hostage submitted to the kidnapper's mandates.",
+  "text_b": null
+}
+, 'test-307': {
+  "guid": "test-307",
+  "idx": 307,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The musician tapped his foot.",
+    "choice2": "The musician pounded the drum.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "A boom reverberated across the stage.",
+  "text_b": null
+}
+, 'test-308': {
+  "guid": "test-308",
+  "idx": 308,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The child awoke screaming from a nightmare.",
+    "choice2": "The child was scared to look under her bed.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The parents rushed to their child's bedroom.",
+  "text_b": null
+}
+, 'test-309': {
+  "guid": "test-309",
+  "idx": 309,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was born premature.",
+    "choice2": "She was born deaf.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman communicated with sign language.",
+  "text_b": null
+}
+, 'test-310': {
+  "guid": "test-310",
+  "idx": 310,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The water became contaminated.",
+    "choice2": "The crops perished.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "A drought occurred in the region.",
+  "text_b": null
+}
+, 'test-311': {
+  "guid": "test-311",
+  "idx": 311,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The bird flew away.",
+    "choice2": "The bird caught a worm.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The cat chased the bird.",
+  "text_b": null
+}
+, 'test-312': {
+  "guid": "test-312",
+  "idx": 312,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "School let out for the summer.",
+    "choice2": "She moved to a new town.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl switched schools.",
+  "text_b": null
+}
+, 'test-313': {
+  "guid": "test-313",
+  "idx": 313,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The owner appointed a new manager.",
+    "choice2": "The employees went on strike.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The factory owner refused to raise employees' wages.",
+  "text_b": null
+}
+, 'test-314': {
+  "guid": "test-314",
+  "idx": 314,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The extremists influenced him.",
+    "choice2": "The extremists assassinated him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The leader antagonized the extremists among his country.",
+  "text_b": null
+}
+, 'test-315': {
+  "guid": "test-315",
+  "idx": 315,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Sand stuck to my feet.",
+    "choice2": "Waves crashed along the shore.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I walked barefoot on the beach.",
+  "text_b": null
+}
+, 'test-316': {
+  "guid": "test-316",
+  "idx": 316,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I put sweatpants on.",
+    "choice2": "I drank a glass of water.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I woke up in the middle of the night feeling cold.",
+  "text_b": null
+}
+, 'test-317': {
+  "guid": "test-317",
+  "idx": 317,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her son smirked.",
+    "choice2": "Her son whined.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The mother hushed her son.",
+  "text_b": null
+}
+, 'test-318': {
+  "guid": "test-318",
+  "idx": 318,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I zipped up the jeans.",
+    "choice2": "I tripped on the pavement.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "A hole ripped in my jeans.",
+  "text_b": null
+}
+, 'test-319': {
+  "guid": "test-319",
+  "idx": 319,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He got a cavity.",
+    "choice2": "His teeth became straight.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy wore braces.",
+  "text_b": null
+}
+, 'test-320': {
+  "guid": "test-320",
+  "idx": 320,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I woke up today with sore muscles.",
+    "choice2": "I woke up today with a sore throat.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I worked out at the gym yesterday.",
+  "text_b": null
+}
+, 'test-321': {
+  "guid": "test-321",
+  "idx": 321,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Other students sat down at the lunch table.",
+    "choice2": "Other students at the lunch table felt left out.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl whispered back and forth to each other at the lunch table.",
+  "text_b": null
+}
+, 'test-322': {
+  "guid": "test-322",
+  "idx": 322,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She sprung back up into the air.",
+    "choice2": "She decided to try to do a flip.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child landed on the trampoline.",
+  "text_b": null
+}
+, 'test-323': {
+  "guid": "test-323",
+  "idx": 323,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The post office delivered the letter.",
+    "choice2": "The post office expedited the letter.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I deposited the letter in the mailbox.",
+  "text_b": null
+}
+, 'test-324': {
+  "guid": "test-324",
+  "idx": 324,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He bet all of his money.",
+    "choice2": "He went home broke.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The gambler was confident.",
+  "text_b": null
+}
+, 'test-325': {
+  "guid": "test-325",
+  "idx": 325,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The winds became stronger.",
+    "choice2": "The arsonists were apprehended.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The forest fire spread.",
+  "text_b": null
+}
+, 'test-326': {
+  "guid": "test-326",
+  "idx": 326,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His mother sent him to his room.",
+    "choice2": "His mother put a bandage on the wound.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child skinned his knee.",
+  "text_b": null
+}
+, 'test-327': {
+  "guid": "test-327",
+  "idx": 327,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He signed his will.",
+    "choice2": "He received an organ transplant.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man survived the deadly illness.",
+  "text_b": null
+}
+, 'test-328': {
+  "guid": "test-328",
+  "idx": 328,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I bit my tongue.",
+    "choice2": "I burnt my tongue.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I took a sip of the scalding coffee.",
+  "text_b": null
+}
+, 'test-329': {
+  "guid": "test-329",
+  "idx": 329,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The writer avoided bias in her stories.",
+    "choice2": "The writer missed an important deadline.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The editor fired the writer.",
+  "text_b": null
+}
+, 'test-330': {
+  "guid": "test-330",
+  "idx": 330,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I slept all day.",
+    "choice2": "I studied all day.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I felt exhausted.",
+  "text_b": null
+}
+, 'test-331': {
+  "guid": "test-331",
+  "idx": 331,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She identified the patient's symptoms.",
+    "choice2": "She prescribed pills to the patient.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The physician diagnosed the patient.",
+  "text_b": null
+}
+, 'test-332': {
+  "guid": "test-332",
+  "idx": 332,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was sweaty.",
+    "choice2": "It felt itchy.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I scratched my skin.",
+  "text_b": null
+}
+, 'test-333': {
+  "guid": "test-333",
+  "idx": 333,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He lost his temper.",
+    "choice2": "He suffered a heart attack.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man underwent emergency surgery.",
+  "text_b": null
+}
+, 'test-334': {
+  "guid": "test-334",
+  "idx": 334,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He flexed his arms.",
+    "choice2": "He rubbed his arms.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's arm muscles bulged.",
+  "text_b": null
+}
+, 'test-335': {
+  "guid": "test-335",
+  "idx": 335,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was surprised.",
+    "choice2": "He felt discouraged.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man raised his eyebrows.",
+  "text_b": null
+}
+, 'test-336': {
+  "guid": "test-336",
+  "idx": 336,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I believed his intentions were good.",
+    "choice2": "I believed that he knew better.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I excused my colleague's blunder.",
+  "text_b": null
+}
+, 'test-337': {
+  "guid": "test-337",
+  "idx": 337,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He began exercising more.",
+    "choice2": "He started waking up earlier.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man quit smoking.",
+  "text_b": null
+}
+, 'test-338': {
+  "guid": "test-338",
+  "idx": 338,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The attacker's body went lifeless.",
+    "choice2": "The attacker started to bleed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman punched her attacker in the nose.",
+  "text_b": null
+}
+, 'test-339': {
+  "guid": "test-339",
+  "idx": 339,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The man's aim was off.",
+    "choice2": "The man was losing the game.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The dart missed the bull's eye.",
+  "text_b": null
+}
+, 'test-340': {
+  "guid": "test-340",
+  "idx": 340,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He discovered rats in the basement.",
+    "choice2": "He kept an ant farm in his room.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The homeowner requested that an exterminator come to his house.",
+  "text_b": null
+}
+, 'test-341': {
+  "guid": "test-341",
+  "idx": 341,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was too tired to prepare anything.",
+    "choice2": "My houseguest overstayed her welcome.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I suggested to my houseguest that we go out to dinner.",
+  "text_b": null
+}
+, 'test-342': {
+  "guid": "test-342",
+  "idx": 342,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She started hiding the diary.",
+    "choice2": "She got a new diary.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl caught her brother reading her diary.",
+  "text_b": null
+}
+, 'test-343': {
+  "guid": "test-343",
+  "idx": 343,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She worked overtime.",
+    "choice2": "She quit her job.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman was short on money for rent.",
+  "text_b": null
+}
+, 'test-344': {
+  "guid": "test-344",
+  "idx": 344,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He touched the hot stove.",
+    "choice2": "He patted the puppy's head.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The child's hand quickly recoiled.",
+  "text_b": null
+}
+, 'test-345': {
+  "guid": "test-345",
+  "idx": 345,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They offered a discount to new customers.",
+    "choice2": "They distributed a survey to customers.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The company wanted to gauge customer satisfaction.",
+  "text_b": null
+}
+, 'test-346': {
+  "guid": "test-346",
+  "idx": 346,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The boy threw the cushions off the couch.",
+    "choice2": "The boy dragged a chair across the floor.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The wood floor became scratched.",
+  "text_b": null
+}
+, 'test-347': {
+  "guid": "test-347",
+  "idx": 347,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My enemy taunted me.",
+    "choice2": "My enemy cocked a fist.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I shielded my face.",
+  "text_b": null
+}
+, 'test-348': {
+  "guid": "test-348",
+  "idx": 348,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was struck by lightning.",
+    "choice2": "People came to venerate it.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The famous statue burned down.",
+  "text_b": null
+}
+, 'test-349': {
+  "guid": "test-349",
+  "idx": 349,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fruit shed seeds.",
+    "choice2": "Flies swarmed the fruit.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I left the fruit out on the table.",
+  "text_b": null
+}
+, 'test-350': {
+  "guid": "test-350",
+  "idx": 350,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She pointed her toes.",
+    "choice2": "She twisted her ankle.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The ballerina tore a ligament.",
+  "text_b": null
+}
+, 'test-351': {
+  "guid": "test-351",
+  "idx": 351,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He learned how to tie them.",
+    "choice2": "He ran around on the playground.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The child's shoelaces came untied.",
+  "text_b": null
+}
+, 'test-352': {
+  "guid": "test-352",
+  "idx": 352,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I returned the book.",
+    "choice2": "I lost track of time.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I became enthralled in the book.",
+  "text_b": null
+}
+, 'test-353': {
+  "guid": "test-353",
+  "idx": 353,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His parents influenced him.",
+    "choice2": "His parents disowned him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man held similar beliefs to those of his parents.",
+  "text_b": null
+}
+, 'test-354': {
+  "guid": "test-354",
+  "idx": 354,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It ran out of gas.",
+    "choice2": "The driver fell asleep.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The car gradually slowed to a stop.",
+  "text_b": null
+}
+, 'test-355': {
+  "guid": "test-355",
+  "idx": 355,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The ice cream lost its flavor.",
+    "choice2": "The ice cream dripped from the cone.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man ate the ice cream in the sun.",
+  "text_b": null
+}
+, 'test-356': {
+  "guid": "test-356",
+  "idx": 356,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The carpet looked dirty.",
+    "choice2": "The walls looked bare.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I hung artwork in the room.",
+  "text_b": null
+}
+, 'test-357': {
+  "guid": "test-357",
+  "idx": 357,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I had a headache.",
+    "choice2": "My boss held a meeting.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I left work early.",
+  "text_b": null
+}
+, 'test-358': {
+  "guid": "test-358",
+  "idx": 358,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The owner scolded the puppy.",
+    "choice2": "The owner gave the puppy a treat.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The puppy soiled the carpet.",
+  "text_b": null
+}
+, 'test-359': {
+  "guid": "test-359",
+  "idx": 359,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My friend forgave me.",
+    "choice2": "My friend became infuriated.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I apologized to my friend.",
+  "text_b": null
+}
+, 'test-360': {
+  "guid": "test-360",
+  "idx": 360,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He carried a backpack.",
+    "choice2": "He wore a neon vest.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man stood out in the crowd.",
+  "text_b": null
+}
+, 'test-361': {
+  "guid": "test-361",
+  "idx": 361,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He completed his testimony.",
+    "choice2": "He was charged with perjury.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The witness lied under oath.",
+  "text_b": null
+}
+, 'test-362': {
+  "guid": "test-362",
+  "idx": 362,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She wanted a new look.",
+    "choice2": "She wanted to blend in.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman dyed her hair.",
+  "text_b": null
+}
+, 'test-363': {
+  "guid": "test-363",
+  "idx": 363,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They found employment.",
+    "choice2": "They were deported.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The immigrants were caught illegally residing in the country.",
+  "text_b": null
+}
+, 'test-364': {
+  "guid": "test-364",
+  "idx": 364,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The audience laughed.",
+    "choice2": "The audience stood up.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The public speaker cracked a joke.",
+  "text_b": null
+}
+, 'test-365': {
+  "guid": "test-365",
+  "idx": 365,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The sun blinded me.",
+    "choice2": "The sun tanned my skin.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I looked into the sun.",
+  "text_b": null
+}
+, 'test-366': {
+  "guid": "test-366",
+  "idx": 366,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I snorted.",
+    "choice2": "I yawned.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I felt bored.",
+  "text_b": null
+}
+, 'test-367': {
+  "guid": "test-367",
+  "idx": 367,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The knife was dull.",
+    "choice2": "The steak was raw.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The steak was difficult to cut.",
+  "text_b": null
+}
+, 'test-368': {
+  "guid": "test-368",
+  "idx": 368,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She received alimony payment.",
+    "choice2": "She acquired massive debt.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman declared bankruptcy.",
+  "text_b": null
+}
+, 'test-369': {
+  "guid": "test-369",
+  "idx": 369,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I wondered if he was out.",
+    "choice2": "I decided to pay him a visit.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The lights in my friend's apartment were on.",
+  "text_b": null
+}
+, 'test-370': {
+  "guid": "test-370",
+  "idx": 370,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The petals came off the flower.",
+    "choice2": "I picked up the flower's scent.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I put the flower under my nose.",
+  "text_b": null
+}
+, 'test-371': {
+  "guid": "test-371",
+  "idx": 371,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She ran into a childhood friend.",
+    "choice2": "She yelled at her children.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman felt nostalgic.",
+  "text_b": null
+}
+, 'test-372': {
+  "guid": "test-372",
+  "idx": 372,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He submitted the paper early.",
+    "choice2": "He submitted the paper incomplete.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The student procrastinated on the paper.",
+  "text_b": null
+}
+, 'test-373': {
+  "guid": "test-373",
+  "idx": 373,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I went to the mall.",
+    "choice2": "I called a mechanic.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My car broke down.",
+  "text_b": null
+}
+, 'test-374': {
+  "guid": "test-374",
+  "idx": 374,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was anonymous.",
+    "choice2": "It was illegible.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I discarded the note.",
+  "text_b": null
+}
+, 'test-375': {
+  "guid": "test-375",
+  "idx": 375,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It laid eggs.",
+    "choice2": "It ascended upwards.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The bird flapped its wings.",
+  "text_b": null
+}
+, 'test-376': {
+  "guid": "test-376",
+  "idx": 376,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The garage was open.",
+    "choice2": "The garage was full.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I parked in the driveway.",
+  "text_b": null
+}
+, 'test-377': {
+  "guid": "test-377",
+  "idx": 377,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The criminal put down the gun.",
+    "choice2": "The victim put his hands up.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The criminal aimed the gun at his victim.",
+  "text_b": null
+}
+, 'test-378': {
+  "guid": "test-378",
+  "idx": 378,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I planned to attend my uncle's funeral.",
+    "choice2": "I planned to attend my friend's wedding.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I looked forward to the weekend.",
+  "text_b": null
+}
+, 'test-379': {
+  "guid": "test-379",
+  "idx": 379,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was daydreaming.",
+    "choice2": "I was nauseous.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I lost track of time.",
+  "text_b": null
+}
+, 'test-380': {
+  "guid": "test-380",
+  "idx": 380,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The printer was low on ink.",
+    "choice2": "The print was out of paper.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The document printed out illegibly.",
+  "text_b": null
+}
+, 'test-381': {
+  "guid": "test-381",
+  "idx": 381,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fans turned to the flag.",
+    "choice2": "The fans rushed the field.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The stadium played the national anthem.",
+  "text_b": null
+}
+, 'test-382': {
+  "guid": "test-382",
+  "idx": 382,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I served it.",
+    "choice2": "I put salt in it.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The dip tasted bland.",
+  "text_b": null
+}
+, 'test-383': {
+  "guid": "test-383",
+  "idx": 383,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The towel absorbed the liquid.",
+    "choice2": "The spill left a sticky residue.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I set the paper towel on the spill.",
+  "text_b": null
+}
+, 'test-384': {
+  "guid": "test-384",
+  "idx": 384,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She bookmarked her page.",
+    "choice2": "She reread the book.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman was interrupted in the midst of reading her book.",
+  "text_b": null
+}
+, 'test-385': {
+  "guid": "test-385",
+  "idx": 385,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The man tightened his seatbelt.",
+    "choice2": "The man looked out the window.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The plane hit some turbulence.",
+  "text_b": null
+}
+, 'test-386': {
+  "guid": "test-386",
+  "idx": 386,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The girl ignored him.",
+    "choice2": "The girl poked him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy flinched.",
+  "text_b": null
+}
+, 'test-387': {
+  "guid": "test-387",
+  "idx": 387,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They amputated her leg.",
+    "choice2": "They monitored her vitals.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The doctors gave the patient an artificial limb.",
+  "text_b": null
+}
+, 'test-388': {
+  "guid": "test-388",
+  "idx": 388,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She shrugged her shoulders at him.",
+    "choice2": "She jerked her arm away from him.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy pinched the girl's elbow.",
+  "text_b": null
+}
+, 'test-389': {
+  "guid": "test-389",
+  "idx": 389,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I valued his opinion.",
+    "choice2": "I knew I was right.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I asked my friend for advice.",
+  "text_b": null
+}
+, 'test-390': {
+  "guid": "test-390",
+  "idx": 390,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The mud stuck to his shoes.",
+    "choice2": "The mud hit him in the face.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy stepped in mud.",
+  "text_b": null
+}
+, 'test-391': {
+  "guid": "test-391",
+  "idx": 391,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Schools shut down.",
+    "choice2": "People hid underground.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The town received several inches of snow.",
+  "text_b": null
+}
+, 'test-392': {
+  "guid": "test-392",
+  "idx": 392,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He went home for the day.",
+    "choice2": "He threatened to quit the job.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The employee's shift ended.",
+  "text_b": null
+}
+, 'test-393': {
+  "guid": "test-393",
+  "idx": 393,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The tree fell onto the roof.",
+    "choice2": "The tree shaded the backyard.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The tree damaged the house.",
+  "text_b": null
+}
+, 'test-394': {
+  "guid": "test-394",
+  "idx": 394,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I stacked the wood in the fireplace.",
+    "choice2": "I swung the axe down to the wood.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The wood split in half.",
+  "text_b": null
+}
+, 'test-395': {
+  "guid": "test-395",
+  "idx": 395,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The couple announced that they were separating.",
+    "choice2": "The couple announced that they were having a baby.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The family congratulated the couple.",
+  "text_b": null
+}
+, 'test-396': {
+  "guid": "test-396",
+  "idx": 396,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She liked him.",
+    "choice2": "She kissed him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl sent the boy a valentine.",
+  "text_b": null
+}
+, 'test-397': {
+  "guid": "test-397",
+  "idx": 397,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was confused.",
+    "choice2": "I agreed with him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I nodded my head at my friend's statement.",
+  "text_b": null
+}
+, 'test-398': {
+  "guid": "test-398",
+  "idx": 398,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They wanted to find a compromise.",
+    "choice2": "They wanted to make a fair decision.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The friends flipped a coin.",
+  "text_b": null
+}
+, 'test-399': {
+  "guid": "test-399",
+  "idx": 399,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The man unloaded the groceries into the refrigerator.",
+    "choice2": "The man took the pizza out of the oven.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The timer in the kitchen went off.",
+  "text_b": null
+}
+, 'test-400': {
+  "guid": "test-400",
+  "idx": 400,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She slacked off.",
+    "choice2": "She worked hard.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman set an ambitious goal.",
+  "text_b": null
+}
+, 'test-401': {
+  "guid": "test-401",
+  "idx": 401,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His son got into legal trouble.",
+    "choice2": "His son inherited his fortune.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The wealthy man died of old age.",
+  "text_b": null
+}
+, 'test-402': {
+  "guid": "test-402",
+  "idx": 402,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The flames went out.",
+    "choice2": "Smoke arose from the flames.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman stomped on the flames.",
+  "text_b": null
+}
+, 'test-403': {
+  "guid": "test-403",
+  "idx": 403,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her driver's license was revoked.",
+    "choice2": "She got in a car accident.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman's car was in the shop.",
+  "text_b": null
+}
+, 'test-404': {
+  "guid": "test-404",
+  "idx": 404,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I made breakfast.",
+    "choice2": "I missed breakfast.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I slept through my alarm.",
+  "text_b": null
+}
+, 'test-405': {
+  "guid": "test-405",
+  "idx": 405,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Cameras flashed in his direction.",
+    "choice2": "His family attended the press conference.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The public figure got out of the limousine.",
+  "text_b": null
+}
+, 'test-406': {
+  "guid": "test-406",
+  "idx": 406,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The bathwater became lukewarm.",
+    "choice2": "The bathwater drained out of the tub.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman lingered in the bathtub.",
+  "text_b": null
+}
+, 'test-407': {
+  "guid": "test-407",
+  "idx": 407,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He joined a fraternity.",
+    "choice2": "He majored in engineering.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The college student wanted to meet other students on campus.",
+  "text_b": null
+}
+, 'test-408': {
+  "guid": "test-408",
+  "idx": 408,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I was looking for loose change.",
+    "choice2": "I was rearranging the living room.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I lifted up the couch cushions.",
+  "text_b": null
+}
+, 'test-409': {
+  "guid": "test-409",
+  "idx": 409,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The boy ran away.",
+    "choice2": "The boy picked a flower.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The wasp flew towards the boy.",
+  "text_b": null
+}
+, 'test-410': {
+  "guid": "test-410",
+  "idx": 410,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was sentenced to perform community service.",
+    "choice2": "She was put on death row.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman was found guilty of a misdemeanor.",
+  "text_b": null
+}
+, 'test-411': {
+  "guid": "test-411",
+  "idx": 411,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The tea steamed.",
+    "choice2": "The sugar dissolved.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I stirred the sugar into the hot tea.",
+  "text_b": null
+}
+, 'test-412': {
+  "guid": "test-412",
+  "idx": 412,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was drafted for the war.",
+    "choice2": "He was injured in battle.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The veteran walked with a limp.",
+  "text_b": null
+}
+, 'test-413': {
+  "guid": "test-413",
+  "idx": 413,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The police attended to the victim.",
+    "choice2": "The police chased the criminal.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The criminal ran away from the police.",
+  "text_b": null
+}
+, 'test-414': {
+  "guid": "test-414",
+  "idx": 414,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I dropped it.",
+    "choice2": "I charged it.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The laptop wouldn't turn on.",
+  "text_b": null
+}
+, 'test-415': {
+  "guid": "test-415",
+  "idx": 415,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She acquired an extensive wardrobe.",
+    "choice2": "She folded her laundry.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman ran out of room in her closet.",
+  "text_b": null
+}
+, 'test-416': {
+  "guid": "test-416",
+  "idx": 416,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His wife gave birth.",
+    "choice2": "His wife left him.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man was heartbroken.",
+  "text_b": null
+}
+, 'test-417': {
+  "guid": "test-417",
+  "idx": 417,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He became qualified for the job he wanted.",
+    "choice2": "His job offer was rescinded.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man obtained a degree.",
+  "text_b": null
+}
+, 'test-418': {
+  "guid": "test-418",
+  "idx": 418,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He greeted the audience.",
+    "choice2": "He spoke into the microphone.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's voice projected clearly throughout the auditorium.",
+  "text_b": null
+}
+, 'test-419': {
+  "guid": "test-419",
+  "idx": 419,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The coin sunk to the bottom.",
+    "choice2": "The coin broke in half.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I tossed a coin into the fountain of water.",
+  "text_b": null
+}
+, 'test-420': {
+  "guid": "test-420",
+  "idx": 420,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The ball went in the hole.",
+    "choice2": "The ball retreated back to the player.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The player hit the ball toward the hole.",
+  "text_b": null
+}
+, 'test-421': {
+  "guid": "test-421",
+  "idx": 421,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I hiccupped.",
+    "choice2": "I sneezed.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I breathed in the dust in the attic.",
+  "text_b": null
+}
+, 'test-422': {
+  "guid": "test-422",
+  "idx": 422,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The customer used counterfeit money.",
+    "choice2": "The customer left his headlights on.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The store cashier called security.",
+  "text_b": null
+}
+, 'test-423': {
+  "guid": "test-423",
+  "idx": 423,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The garbage made the kitchen smell bad.",
+    "choice2": "I accidentally threw away my shopping list.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I took the garbage out.",
+  "text_b": null
+}
+, 'test-424': {
+  "guid": "test-424",
+  "idx": 424,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The children admired the animals.",
+    "choice2": "The children chased the animals.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The family went to the zoo.",
+  "text_b": null
+}
+, 'test-425': {
+  "guid": "test-425",
+  "idx": 425,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His kidneys were failing.",
+    "choice2": "His lungs were congested.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man's breathing was loud.",
+  "text_b": null
+}
+, 'test-426': {
+  "guid": "test-426",
+  "idx": 426,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I asked my friend for directions to the venue.",
+    "choice2": "I asked my friend if he was interested in going.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I had an extra ticket for the concert.",
+  "text_b": null
+}
+, 'test-427': {
+  "guid": "test-427",
+  "idx": 427,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I brought out blankets.",
+    "choice2": "I opened the windows.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The air conditioner in the house broke.",
+  "text_b": null
+}
+, 'test-428': {
+  "guid": "test-428",
+  "idx": 428,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His backpack was open.",
+    "choice2": "His backpack was heavy.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy's back ached.",
+  "text_b": null
+}
+, 'test-429': {
+  "guid": "test-429",
+  "idx": 429,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I baked her a cake.",
+    "choice2": "It was her birthday.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I bought my mother a present.",
+  "text_b": null
+}
+, 'test-430': {
+  "guid": "test-430",
+  "idx": 430,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A bee stung the gardener.",
+    "choice2": "Squirrels dug up the bulbs.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The daffodils in the garden were destroyed.",
+  "text_b": null
+}
+, 'test-431': {
+  "guid": "test-431",
+  "idx": 431,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The flame faded out.",
+    "choice2": "The match produced a flame.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I struck the match.",
+  "text_b": null
+}
+, 'test-432': {
+  "guid": "test-432",
+  "idx": 432,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They didn't want to debate in court.",
+    "choice2": "They wanted to repair their personal relationship.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The disputing parties reached a settlement.",
+  "text_b": null
+}
+, 'test-433': {
+  "guid": "test-433",
+  "idx": 433,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Their parents died.",
+    "choice2": "Their parents spoiled them.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The children were sent to an orphanage.",
+  "text_b": null
+}
+, 'test-434': {
+  "guid": "test-434",
+  "idx": 434,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "A tsunami occurred.",
+    "choice2": "It began to hail.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "A meteorite landed in the ocean.",
+  "text_b": null
+}
+, 'test-435': {
+  "guid": "test-435",
+  "idx": 435,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She became dehydrated.",
+    "choice2": "She panicked.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The hiker encountered a poisonous snake.",
+  "text_b": null
+}
+, 'test-436': {
+  "guid": "test-436",
+  "idx": 436,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I turned the oven on.",
+    "choice2": "I put the dish in the oven.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The oven became hot.",
+  "text_b": null
+}
+, 'test-437': {
+  "guid": "test-437",
+  "idx": 437,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The lemon got moldy.",
+    "choice2": "The lemon squirted.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I squeezed the lemon wedge.",
+  "text_b": null
+}
+, 'test-438': {
+  "guid": "test-438",
+  "idx": 438,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The country abandoned the land.",
+    "choice2": "The country colonized the land.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The country discovered new land.",
+  "text_b": null
+}
+, 'test-439': {
+  "guid": "test-439",
+  "idx": 439,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It shattered all over the floor.",
+    "choice2": "It landed in a pile of laundry.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The glass toppled off the table.",
+  "text_b": null
+}
+, 'test-440': {
+  "guid": "test-440",
+  "idx": 440,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The floor was uneven.",
+    "choice2": "The floor was slippery.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The table wobbled.",
+  "text_b": null
+}
+, 'test-441': {
+  "guid": "test-441",
+  "idx": 441,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His son confessed the truth.",
+    "choice2": "The father trusted his son.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The father caught his son lying.",
+  "text_b": null
+}
+, 'test-442': {
+  "guid": "test-442",
+  "idx": 442,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He took cough syrup.",
+    "choice2": "He took aspirin.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man's head throbbed with pain.",
+  "text_b": null
+}
+, 'test-443': {
+  "guid": "test-443",
+  "idx": 443,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It was approaching the station.",
+    "choice2": "It was running behind schedule.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The train slowed down.",
+  "text_b": null
+}
+, 'test-444': {
+  "guid": "test-444",
+  "idx": 444,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Mental illness ran in his family.",
+    "choice2": "He was diagnosed with depression.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man went through therapy.",
+  "text_b": null
+}
+, 'test-445': {
+  "guid": "test-445",
+  "idx": 445,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She swallowed her food.",
+    "choice2": "She choked on her food.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman clutched her throat.",
+  "text_b": null
+}
+, 'test-446': {
+  "guid": "test-446",
+  "idx": 446,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her voice sounded raspy.",
+    "choice2": "She spoke with an accent.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman had a sore throat.",
+  "text_b": null
+}
+, 'test-447': {
+  "guid": "test-447",
+  "idx": 447,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It drooled.",
+    "choice2": "It laid down.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The dog eyed the juicy steak on the table.",
+  "text_b": null
+}
+, 'test-448': {
+  "guid": "test-448",
+  "idx": 448,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She fired her employees.",
+    "choice2": "She became wealthy.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman's business succeeded.",
+  "text_b": null
+}
+, 'test-449': {
+  "guid": "test-449",
+  "idx": 449,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The bell rang.",
+    "choice2": "The teacher assigned homework.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The students exited the classroom.",
+  "text_b": null
+}
+, 'test-450': {
+  "guid": "test-450",
+  "idx": 450,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her acquaintances expressed skepticism.",
+    "choice2": "Her acquaintances related to her.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman claimed she saw a ghost.",
+  "text_b": null
+}
+, 'test-451': {
+  "guid": "test-451",
+  "idx": 451,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He nearly drowned in the ocean.",
+    "choice2": "He was nearly killed in an explosion.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost his hearing.",
+  "text_b": null
+}
+, 'test-452': {
+  "guid": "test-452",
+  "idx": 452,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The balloon deflated.",
+    "choice2": "The balloon rose into the air.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The child let go of the balloon string.",
+  "text_b": null
+}
+, 'test-453': {
+  "guid": "test-453",
+  "idx": 453,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He had a stroke.",
+    "choice2": "He took a deep breath.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost his ability to speak.",
+  "text_b": null
+}
+, 'test-454': {
+  "guid": "test-454",
+  "idx": 454,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "There was a crack in the cement.",
+    "choice2": "She heard her name being called.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman tripped on the sidewalk.",
+  "text_b": null
+}
+, 'test-455': {
+  "guid": "test-455",
+  "idx": 455,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The lifeguard jumped in after him.",
+    "choice2": "The man soaked the lifeguard.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man did a canon ball into the pool.",
+  "text_b": null
+}
+, 'test-456': {
+  "guid": "test-456",
+  "idx": 456,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My infection cleared up.",
+    "choice2": "My infection spread.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I took antibiotics.",
+  "text_b": null
+}
+, 'test-457': {
+  "guid": "test-457",
+  "idx": 457,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The driver pushed the brake.",
+    "choice2": "The driver honked his horn.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The traffic light turned yellow.",
+  "text_b": null
+}
+, 'test-458': {
+  "guid": "test-458",
+  "idx": 458,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I soaked the container in warm water.",
+    "choice2": "I placed the container on the hot stove.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The plastic container melted.",
+  "text_b": null
+}
+, 'test-459': {
+  "guid": "test-459",
+  "idx": 459,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The driver hit a telephone pole.",
+    "choice2": "The driver ran a red light.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The car got dented.",
+  "text_b": null
+}
+, 'test-460': {
+  "guid": "test-460",
+  "idx": 460,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He skipped the exam.",
+    "choice2": "He passed the exam.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy studied all night.",
+  "text_b": null
+}
+, 'test-461': {
+  "guid": "test-461",
+  "idx": 461,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He feared learning to swim.",
+    "choice2": "The lifeguard was on duty.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The young boy clung to the ledge of the pool.",
+  "text_b": null
+}
+, 'test-462': {
+  "guid": "test-462",
+  "idx": 462,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I felt my heartbeat.",
+    "choice2": "My heart rate sped up.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I put my hand to my chest.",
+  "text_b": null
+}
+, 'test-463': {
+  "guid": "test-463",
+  "idx": 463,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My office was crowded.",
+    "choice2": "My office was noisy.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The building adjacent to my office was under construction.",
+  "text_b": null
+}
+, 'test-464': {
+  "guid": "test-464",
+  "idx": 464,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The family invited the neighbors over for dinner.",
+    "choice2": "The family waved to the neighbors from their yard.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The family wanted to get to know their new neighbors.",
+  "text_b": null
+}
+, 'test-465': {
+  "guid": "test-465",
+  "idx": 465,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The swimmer dove into the pool.",
+    "choice2": "The swimmer floated in the pool.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "Water splashed up from the pool.",
+  "text_b": null
+}
+, 'test-466': {
+  "guid": "test-466",
+  "idx": 466,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I accidentally swallowed a seed.",
+    "choice2": "I accidentally chipped my tooth.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I bit into a slice of watermelon.",
+  "text_b": null
+}
+, 'test-467': {
+  "guid": "test-467",
+  "idx": 467,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "His jacket was unzipped.",
+    "choice2": "His shoelaces were untied.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The boy tripped.",
+  "text_b": null
+}
+, 'test-468': {
+  "guid": "test-468",
+  "idx": 468,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She was distracted by noise.",
+    "choice2": "She got her ears pierced.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The woman put earplugs in.",
+  "text_b": null
+}
+, 'test-469': {
+  "guid": "test-469",
+  "idx": 469,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I drank all the water in it.",
+    "choice2": "I kept it in the fridge.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I refilled my water bottle.",
+  "text_b": null
+}
+, 'test-470': {
+  "guid": "test-470",
+  "idx": 470,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "It contained vulgar language.",
+    "choice2": "It had a complicated plot.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The television show was censored.",
+  "text_b": null
+}
+, 'test-471': {
+  "guid": "test-471",
+  "idx": 471,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The crew drowned.",
+    "choice2": "The crew encountered pirates.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The ship wrecked.",
+  "text_b": null
+}
+, 'test-472': {
+  "guid": "test-472",
+  "idx": 472,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He solved the riddle.",
+    "choice2": "He requested a hint.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy felt stumped by the riddle.",
+  "text_b": null
+}
+, 'test-473': {
+  "guid": "test-473",
+  "idx": 473,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The man hung up the phone.",
+    "choice2": "The man picked up the phone.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The phone rang.",
+  "text_b": null
+}
+, 'test-474': {
+  "guid": "test-474",
+  "idx": 474,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I hugged her.",
+    "choice2": "I felt uncomfortable.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The woman was staring at me.",
+  "text_b": null
+}
+, 'test-475': {
+  "guid": "test-475",
+  "idx": 475,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They took pictures of the exhibits.",
+    "choice2": "They viewed all the exhibits.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The group left the museum.",
+  "text_b": null
+}
+, 'test-476': {
+  "guid": "test-476",
+  "idx": 476,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My friend introduced me to the man.",
+    "choice2": "My friend stood up for me.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man started an argument with me.",
+  "text_b": null
+}
+, 'test-477': {
+  "guid": "test-477",
+  "idx": 477,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I pumped air into the tire.",
+    "choice2": "I switched gears on the bike.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The tire on my bike was flat.",
+  "text_b": null
+}
+, 'test-478': {
+  "guid": "test-478",
+  "idx": 478,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "Her father read her a story.",
+    "choice2": "Her father felt her forehead.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl looked pale.",
+  "text_b": null
+}
+, 'test-479': {
+  "guid": "test-479",
+  "idx": 479,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I used a pencil.",
+    "choice2": "I signed my name.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The pen ran out of ink.",
+  "text_b": null
+}
+, 'test-480': {
+  "guid": "test-480",
+  "idx": 480,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was in debt.",
+    "choice2": "He started a business.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man was denied for a loan.",
+  "text_b": null
+}
+, 'test-481': {
+  "guid": "test-481",
+  "idx": 481,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "She had chicken pox.",
+    "choice2": "She enjoyed learning math.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The girl stayed home from school.",
+  "text_b": null
+}
+, 'test-482': {
+  "guid": "test-482",
+  "idx": 482,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I took it to the dumpster.",
+    "choice2": "I dumped it down the sink.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The trash bag was full.",
+  "text_b": null
+}
+, 'test-483': {
+  "guid": "test-483",
+  "idx": 483,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "My roommate spilled punch.",
+    "choice2": "My dog shed hair.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "I vacuumed the carpet.",
+  "text_b": null
+}
+, 'test-484': {
+  "guid": "test-484",
+  "idx": 484,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He turned off his computer.",
+    "choice2": "He threw a chair across the room.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man lost his temper.",
+  "text_b": null
+}
+, 'test-485': {
+  "guid": "test-485",
+  "idx": 485,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The twig burned.",
+    "choice2": "The fire went out.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The girl threw a twig into the campfire.",
+  "text_b": null
+}
+, 'test-486': {
+  "guid": "test-486",
+  "idx": 486,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The hot water was gone.",
+    "choice2": "He couldn't find a towel.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man got out of the shower.",
+  "text_b": null
+}
+, 'test-487': {
+  "guid": "test-487",
+  "idx": 487,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "They set aside a savings fund for tuition.",
+    "choice2": "They encouraged their children to play outside.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The parents wanted their children to go to college.",
+  "text_b": null
+}
+, 'test-488': {
+  "guid": "test-488",
+  "idx": 488,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The shoes loosened.",
+    "choice2": "The shoes became worn.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man unlaced his shoes.",
+  "text_b": null
+}
+, 'test-489': {
+  "guid": "test-489",
+  "idx": 489,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He refrigerated the leftovers.",
+    "choice2": "He saved the recipe.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man ate half of the entree.",
+  "text_b": null
+}
+, 'test-490': {
+  "guid": "test-490",
+  "idx": 490,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I put ice on it.",
+    "choice2": "I rubbed lotion on it.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My ankle was swollen.",
+  "text_b": null
+}
+, 'test-491': {
+  "guid": "test-491",
+  "idx": 491,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I talked to my colleague at my desk.",
+    "choice2": "I overheard the conversation in the hall.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "My office door was open.",
+  "text_b": null
+}
+, 'test-492': {
+  "guid": "test-492",
+  "idx": 492,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I took a seat.",
+    "choice2": "I skimmed a magazine.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I had to wait in line.",
+  "text_b": null
+}
+, 'test-493': {
+  "guid": "test-493",
+  "idx": 493,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "The fly buzzed away.",
+    "choice2": "The fly stayed still.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man swatted at the fly.",
+  "text_b": null
+}
+, 'test-494': {
+  "guid": "test-494",
+  "idx": 494,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He was dying.",
+    "choice2": "He was a widower.",
+    "question": "cause"
+  },
+  "num_choices": 1,
+  "text_a": "The man wrote a will.",
+  "text_b": null
+}
+, 'test-495': {
+  "guid": "test-495",
+  "idx": 495,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He dropped out of the race.",
+    "choice2": "He sped up his pace.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The runner sensed his competitor gaining on him.",
+  "text_b": null
+}
+, 'test-496': {
+  "guid": "test-496",
+  "idx": 496,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "I asked for advice.",
+    "choice2": "I came up with a solution.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "I thought carefully about the problem.",
+  "text_b": null
+}
+, 'test-497': {
+  "guid": "test-497",
+  "idx": 497,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He felt terrified.",
+    "choice2": "He felt ecstatic.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The traveler walked on the shaky suspension bridge.",
+  "text_b": null
+}
+, 'test-498': {
+  "guid": "test-498",
+  "idx": 498,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He met his friends to watch the game.",
+    "choice2": "He made a bet with his friends.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The man anticipated the team's victory.",
+  "text_b": null
+}
+, 'test-499': {
+  "guid": "test-499",
+  "idx": 499,
+  "label": null,
+  "logits": null,
+  "meta": {
+    "choice1": "He set his alarm clock.",
+    "choice2": "He counted sheep.",
+    "question": "effect"
+  },
+  "num_choices": 1,
+  "text_a": "The boy couldn't fall asleep.",
+  "text_b": null
+}
+}

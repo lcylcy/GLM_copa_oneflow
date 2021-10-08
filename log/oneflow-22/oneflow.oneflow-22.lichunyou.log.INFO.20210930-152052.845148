@@ -1,0 +1,30 @@
+Log file created at: 2021/09/30 15:20:52
+Running on machine: oneflow-22
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0930 15:20:52.968538 845148 global.h:36] NewGlobal 14cudaDeviceProp
+I0930 15:20:55.138248 845148 global.h:36] NewGlobal N7oneflow7EnvDescE
+I0930 15:20:55.138545 845148 global.h:36] NewGlobal N7oneflow10ProcessCtxE
+I0930 15:20:55.138590 845148 env_global_objects_scope.cpp:152] using rpc backend: local
+I0930 15:20:55.138753 845148 global.h:36] NewGlobal N7oneflow12ResourceDescE
+I0930 15:20:55.138792 845148 global.h:36] NewGlobal N7oneflow12ResourceDescE
+I0930 15:20:55.431139 845148 global.h:36] NewGlobal N7oneflow10ThreadPoolE
+I0930 15:20:55.433992 845148 global.h:36] NewGlobal N7oneflow16EagerNcclCommMgrE
+I0930 15:20:55.434052 845148 global.h:36] NewGlobal N7oneflow18CudnnConvAlgoCacheE
+I0930 15:20:55.434062 845148 global.h:36] NewGlobal N7oneflow2vm19VirtualMachineScopeE
+I0930 15:20:55.434083 845148 global.h:36] NewGlobal N7oneflow9OneflowVME
+I0930 15:20:55.435267 845148 oneflow_vm.cpp:75] transport stream type: N7oneflow2vm13CpuStreamTypeE
+I0930 15:20:55.435302 845148 oneflow_vm.cpp:75] transport stream type: N7oneflow2vm14CudaStreamTypeE
+I0930 15:20:55.435308 845148 oneflow_vm.cpp:75] transport stream type: N7oneflow2vm19AsyncCudaStreamTypeE
+I0930 15:20:55.435647 845148 global.h:36] NewGlobal N7oneflow27EagerJobBuildAndInferCtxMgrE
+I0930 15:20:55.435664 845148 global.h:36] NewGlobal N7oneflow12EpollCommNetE
+I0930 15:20:55.435870 845148 epoll_comm_network.cpp:63] CommNet:Epoll listening on 0.0.0.0:42149
+I0930 15:20:55.435923 845148 epoll_comm_network.cpp:197] machine 0 sockfd -1
+I0930 15:20:55.436117 845148 global.h:36] NewGlobal N7oneflow9TransportE
+I0930 15:20:55.437299 845148 global.h:36] NewGlobal N7oneflow25MultiClientSessionContextE
+F0930 15:21:16.602355 845148 expand_op.cpp:36] 
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/ops/expand_op.cpp", line 36, in operator()
+    getOutShapeAndStrideForFp(in_shape, logical_expand_shape, out_shape, stride)
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/kernels/expand_kernel_utils.cpp", line 76, in getOutShapeAndStrideForFp
+    getOutShapeAndStride(in_shape, expand_shape, out_shape, stride)
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/kernels/expand_kernel_utils.cpp", line 41, in getOutShapeAndStride
+    Check failed: expand_shape.at(i) > 0 && in_shape.at(index) == 1 Invalid expand shape

@@ -1,0 +1,10 @@
+Log file created at: 2021/09/30 17:03:35
+Running on machine: oneflow-22
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+F0930 17:03:35.184342 1250147 expand_op.cpp:36] 
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/ops/expand_op.cpp", line 36, in operator()
+    getOutShapeAndStrideForFp(in_shape, logical_expand_shape, out_shape, stride)
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/kernels/expand_kernel_utils.cpp", line 76, in getOutShapeAndStrideForFp
+    getOutShapeAndStride(in_shape, expand_shape, out_shape, stride)
+  File "/dataset/lichunyou/oneflow_src/oneflow/oneflow/user/kernels/expand_kernel_utils.cpp", line 41, in getOutShapeAndStride
+    Check failed: expand_shape.at(i) > 0 && in_shape.at(index) == 1 Invalid expand shape
